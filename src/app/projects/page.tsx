@@ -8,25 +8,27 @@ const projectsPage = () => {
   // PROJECTS DATA
   const Projects = [
     {
-      title: "",
+      title: "Job Application Tracker",
       description:
-        ``,
-      tags: [""],
-      link: "",
+        `A Full Stack Web Application to track job applications.
+        It has features like adding, updating, deleting job applications,
+        and also has a feature to add notes to each job application.`,
+      tags: ["Nextjs", "Typescript"],
+      link: "https://job-application-tracker-rho.vercel.app/",
     },
    
     {
-      title: "",
+      title: "Under Construction",
       description:
-        " ",
-      tags: [""],
+        "Coming Soon",
+      tags: ["Nextjs", "Typescript"],
       link: "",
     },
     {
-      title: "",
+      title: "Under Construction",
       description:
-    "",
-      tags: [""],
+    "Coming Soon",
+      tags: ["Nextjs", "Typescript"],
       link: "",
     },
   ];
