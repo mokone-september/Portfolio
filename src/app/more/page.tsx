@@ -47,10 +47,10 @@ const morePage = () => {
     //   link: "https://mdtaquijhar.gumroad.com/",
     // },
     {
-      title: "Buy Me a coffee",
+      title: "Medium",
       description:
-        "Supports my content quality, new topics, and project creation.",
-      link: "https://www.buymeacoffee.com/mokonesept5",
+        "I write blogs on web development, trending tech stacks or javascript guide or tips in Medium",
+      link: "https://medium.com/@mokoneseptember",
     },
   ];
 
