@@ -18,11 +18,11 @@ const projectsPage = () => {
     },
    
     {
-      title: "Under Construction",
+      title: "Weather App",
       description:
-        "Coming Soon",
-      tags: ["Nextjs", "Typescript"],
-      link: "",
+        "A Weather App that shows the current weather of any city in the world.",
+      tags: ["Vite", "Typescript"],
+      link: "https://weather-app-pink-five-83.vercel.app/",
     },
     {
       title: "Under Construction",
