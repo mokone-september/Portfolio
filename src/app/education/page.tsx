@@ -30,7 +30,7 @@ const educationPage = () => {
             delay={0.35}
             className="relative w-3/4 border-l-4 border-l-[#3c3c3c] p-4 gap-3 education_point "
           >
-            <div className="text-2xl font-rubik max-sm:text-xl">
+            <div className="text-2xl font-rubik max-sm:text-xl text-[#2f7df4]">
             HyperionDev <br /> Software Engineering bootcamp certicate <br /> Johannesburg,
               South Africa
             </div>

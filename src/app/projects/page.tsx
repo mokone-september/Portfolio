@@ -27,7 +27,7 @@ const projectsPage = () => {
     {
       title: "Under Construction",
       description:
-    "Coming Soon",
+    "Coming Soon, a journey of innovation, problem-solving and continuous learning.",
       tags: ["Nextjs", "Typescript"],
       link: "",
     },
