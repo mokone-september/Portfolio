@@ -17,6 +17,13 @@ pnpm dev
 bun dev
 ```
 
+## Getting Started / Installation
+
+1. Install packages
+
+```bash
+npm install 
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
@@ -31,3 +38,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - `more` - this were the place links of blog.
 - `projects` - a curated collection of my creative endeavors and technical projects.
 - `skills` - a showcase of technical experience and tools used.
+
+## Contact
+
+[`LinkedIn`](https://www.linkedin.com/in/mokone-september)
