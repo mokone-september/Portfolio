@@ -19,10 +19,7 @@ bun dev
 
 ## Getting Started / Installation
 
-1. Install packages
-
-```bash
-npm install 
+ 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
