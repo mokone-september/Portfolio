@@ -1,9 +1,10 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
-import { Button } from '../ui/button';
+"use client";
 
-const HackerBtn = ({ label }: { label: string }) => {
+import { useState, useEffect } from 'react';
+import { Button } from '../ui/button';
+import { Download } from 'lucide-react';
+
+const HackerBtn = ({ label, onClick }: { label: string, onClick: () => void }) => {
   const [displayText, setDisplayText] = useState(label);
   const charset = "abcdefghijklmnopqrstuvwxyz";
 
@@ -33,11 +34,12 @@ const HackerBtn = ({ label }: { label: string }) => {
   }, [label]);
 
   return (
-    <Button size={'lg'} className='text-base px-5 py-6'       onMouseEnter={startScrambling}
-    >   <Download className="mx-1" />
-        {displayText}
+    <Button size={'lg'} className='text-base px-5 py-6' onMouseEnter={startScrambling} onClick={onClick}>
+      <Download className="mx-1" />
+      {displayText}
     </Button>
   );
 };
 
 export default HackerBtn;
+
