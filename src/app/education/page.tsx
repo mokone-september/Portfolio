@@ -33,6 +33,8 @@ const educationPage = () => {
             <div className="text-2xl font-rubik max-sm:text-xl text-[#2f7df4]">
             HyperionDev <br /> Software Engineering bootcamp certicate <br /> Johannesburg,
               South Africa
+              <br />
+              <br />
             </div>
             <p className=" font-poppins text-base w-full text-primary  max-sm:text-xs">
               I embarked on a transformative journey through the Software Engineering

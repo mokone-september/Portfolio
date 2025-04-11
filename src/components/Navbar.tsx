@@ -51,6 +51,12 @@ const Navbar = () => {
         <GraduationCap className='h-full w-full ' />
       ),
       href: '/education',
+    },{
+      title: 'Work',
+      icon: (
+        <Briefcase  className='h-full w-full ' />
+      ),
+      href: '/work',
     },
     {
       title: 'Projects',

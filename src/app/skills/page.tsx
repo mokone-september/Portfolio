@@ -22,10 +22,10 @@ const skillPage = () => {
       name: "TypeScript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     },
-    {
-      name: "C++",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-    },
+    // {
+    //   name: "C++",
+    //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    // },
     {
       name: "Python",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -49,10 +49,10 @@ const skillPage = () => {
       name: "Vue.js",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
     },
-    {
-      name: "Svelte",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
-    },
+    // {
+    //   name: "Svelte",
+    //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+    // },
     {
       name: "Tailwind CSS",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
@@ -109,8 +109,8 @@ const skillPage = () => {
         <Heading>My Technical Experience/Skills.</Heading>
         <FramerWrapper y={0} x={200}>
           <p className="font-poppins text-xl w-full text-primary max-sm:text-lg">
-            Currently I am a fresher and I have a solid understand of HTML5,
-            CSS3, JS, TS and React, including responsive design principles. I
+            Currently I am I have a solid understand of HTML5,
+            CSS3, JS, TS and React, including responsive design principles. <br /> I
             specialize in building web applications and sites using Javascript,
             Typescript, React, Nextjs & Nodejs.
           </p>

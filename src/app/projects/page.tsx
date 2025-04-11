@@ -13,7 +13,7 @@ const projectsPage = () => {
         `A Full Stack Web Application to track job applications.
         It has features like adding, updating, deleting job applications,
         and also has a feature to add notes to each job application.`,
-      tags: ["Nextjs", "Typescript"],
+      tags: ["Nextjs", "Typescript", "React Hook Form"],
       link: "https://job-application-tracker-rho.vercel.app/",
     },
    
@@ -21,14 +21,14 @@ const projectsPage = () => {
       title: "Weather App",
       description:
         "A Weather App that shows the current weather of any city in the world.",
-      tags: ["Vite", "Typescript"],
+      tags: ["Vite", "Typescript", "Library"],
       link: "https://weather-app-pink-five-83.vercel.app/",
     },
     {
       title: "Under Construction",
       description:
     "Coming Soon, a journey of innovation, problem-solving and continuous learning.",
-      tags: ["Nextjs", "Typescript"],
+      tags: ["Vite", "Typescript"],
       link: "",
     },
   ];
