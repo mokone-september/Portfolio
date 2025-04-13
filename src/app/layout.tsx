@@ -16,7 +16,7 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mdTaquiImam.vercel.app"),
+  metadataBase: new URL("https://portfolio-ten-vert-28.vercel.app"),
   title: {
     default: siteConfig.name,
     template: `%s - Software Engineer`,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Taqui Imam",
+      name: "Thabiso Kenneth Mokone",
       url: "",
     },
   ],
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og-image.png`],
-    creator: "@Taquiimam14",
+    creator: "Thabiso Kenneth Mokone",
   },
   icons: {
     icon: "/favicon.ico",
