@@ -25,11 +25,11 @@ const projectsPage = () => {
       link: "https://weather-app-pink-five-83.vercel.app/",
     },
     {
-      title: "Under Construction",
+      title: "Quiz App",
       description:
-    "Coming Soon, a journey of innovation, problem-solving and continuous learning.",
-      tags: ["Vite", "Typescript"],
-      link: "",
+    "A simple and interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
+      tags: ["Vite", "Typescript", "Library"],
+      link: "https://quiz-vue-nine.vercel.app/",
     },
   ];
 
