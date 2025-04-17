@@ -29,7 +29,7 @@ const projectsPage = () => {
       description:
     "A simple and interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
       tags: ["Vite", "Typescript", "Library"],
-      link: "https://quiz-vue-nine.vercel.app/",
+      link: "https://vue-quiz-ee0f5e0ud-mokone-septembers-projects.vercel.app/",
     },
   ];
 
