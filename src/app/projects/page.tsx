@@ -22,14 +22,14 @@ const projectsPage = () => {
       description:
         "A Weather App that shows the current weather of any city in the world.",
       tags: ["Vite", "Typescript", "Library"],
-      link: "https://weather-app-pink-five-83.vercel.app/",
+      link: "https://atmos-weather-app.vercel.app/",
     },
     {
       title: "Quiz App",
       description:
     "A simple and interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
       tags: ["Vite", "Typescript", "Library"],
-      link: "https://vue-quiz-ee0f5e0ud-mokone-septembers-projects.vercel.app/",
+      link: "https://quiz-nuxt-smoky.vercel.app/",
     },
   ];
 
