@@ -31,7 +31,15 @@ const projectsPage = () => {
       tags: ["Vite", "Typescript", "Library"],
       link: "https://quiz-nuxt-smoky.vercel.app/",
     },
+    {
+      title: "Snake Game",
+      description:
+    "A simple 2d snake game built using react, redux and typescript",
+      tags: ["Typescript", "Library"],
+      link: "https://snake-game-pi-rose.vercel.app/",
+    },
   ];
+  ;
 
   return (
     // PROJECT PAGE
