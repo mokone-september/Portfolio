@@ -28,14 +28,14 @@ const projectsPage = () => {
       title: "Quiz App",
       description:
     "A simple and interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
-      tags: ["Vite", "Typescript", "Library"],
+    tags: ["Vue", "Typescript", "Nuxt", "Pinia"],
       link: "https://quiz-nuxt-smoky.vercel.app/",
     },
     {
       title: "Snake Game",
       description:
-    "A simple 2d snake game built using react, redux and typescript",
-      tags: ["Typescript", "Library"],
+    "A simple 2D snake game built using react, redux and typescript",
+      tags: [ "React", "Typescript", "Redux"],
       link: "https://snake-game-pi-rose.vercel.app/",
     },
   ];

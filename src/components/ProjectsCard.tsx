@@ -42,13 +42,13 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
             {value.tags.map((tag: string, index: number) => {
               const tagStyles = {
                 'Nextjs': 'bg-teal-100 text-teal-800',
-                'Freelancing': 'bg-yellow-100 text-yellow-800',
-                'Shadcn Ui': 'bg-blue-100 text-blue-800',
+                'Redux': 'bg-yellow-100 text-yellow-800',
+                'Pinia': 'bg-blue-100 text-blue-800',
                 'Typescript': 'bg-red-100 text-red-800',
                 'MySQL': 'bg-orange-100 text-orange-800',
-                'Zustand': 'bg-purple-100 text-purple-800',
-                'Supabase': 'bg-emerald-100 text-emerald-800',
-                'Npx': 'bg-indigo-100 text-indigo-800',
+                'Nuxt': 'bg-purple-100 text-purple-800',
+                'Vue': 'bg-emerald-100 text-emerald-800',
+                'React': 'bg-indigo-100 text-indigo-800',
                 'Library': 'bg-pink-100 text-pink-800',
                 'Zod': 'bg-cyan-100 text-cyan-800',
                 'Vite': 'bg-purple-100 text-purple-800',
