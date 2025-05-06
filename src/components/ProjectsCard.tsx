@@ -49,6 +49,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
                 'Nuxt': 'bg-purple-100 text-purple-800',
                 'Vue': 'bg-emerald-100 text-emerald-800',
                 'React': 'bg-indigo-100 text-indigo-800',
+                'Reacts': 'bg-indigo-100 text-indigo-800',
                 'Library': 'bg-pink-100 text-pink-800',
                 'Zod': 'bg-cyan-100 text-cyan-800',
                 'Vite': 'bg-purple-100 text-purple-800',
