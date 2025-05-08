@@ -10,7 +10,7 @@ const projectsPage = () => {
     {
       title: "Job Application Tracker",
       description:
-        `A Full Stack Web Application to track job applications.
+        `A Web Application to track job applications.
         It has features like adding, updating, deleting job applications,
         and also has a feature to add notes to each job application.`,
       tags: ["Nextjs", "Typescript", "React Hook Form"],
