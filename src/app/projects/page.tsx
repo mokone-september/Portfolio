@@ -27,7 +27,7 @@ const projectsPage = () => {
     {
       title: "Quiz App",
       description:
-    "A simple and interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
+    "An interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
     tags: ["Vue", "Typescript", "Nuxt", "Pinia"],
       link: "https://quiz-nuxt-smoky.vercel.app/",
     },
