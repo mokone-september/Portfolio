@@ -10,9 +10,7 @@ const projectsPage = () => {
     {
       title: "Job Application Tracker",
       description:
-        `A Web Application to track job applications.
-        It has features like adding, updating, deleting job applications,
-        and also has a feature to add notes to each job application.`,
+        `A web app to track job applications, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
       tags: ["Nextjs", "Typescript", "React Hook Form"],
       link: "https://job-application-tracker-rho.vercel.app/",
     },
@@ -20,21 +18,21 @@ const projectsPage = () => {
     {
       title: "Weather App",
       description:
-        "A Weather App that shows the current weather of any city in the world.",
+      'A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.',
       tags: ["Vite", "Typescript", "Library"],
       link: "https://atmos-weather-app.vercel.app/",
     },
     {
       title: "Quiz App",
       description:
-    "An interactive multiple-choice quiz game built with Vue 3, TypeScript, Pinia, and Tailwind CSS",
+    'A quiz app that allows users to take quizzes on various topics, with features to create, update, and delete quizzes.',
     tags: ["Vue", "Typescript", "Nuxt", "Pinia"],
       link: "https://quiz-nuxt-smoky.vercel.app/",
     },
     {
       title: "Snake Game",
       description:
-    "A simple 2D snake game built using react, redux and typescript",
+    'A classic snake game built with React and Redux, featuring a simple and intuitive interface, and smooth gameplay.',
       tags: [ "React", "Typescript", "Redux"],
       link: "https://snake-game-pi-rose.vercel.app/",
     },
