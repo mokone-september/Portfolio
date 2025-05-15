@@ -45,7 +45,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
                 'Redux': 'bg-yellow-100 text-yellow-800',
                 'Pinia': 'bg-blue-100 text-blue-800',
                 'Typescript': 'bg-red-100 text-red-800',
-                'MySQL': 'bg-orange-100 text-orange-800',
+                'Tailwindcss': 'bg-orange-100 text-orange-800',
                 'Nuxt': 'bg-purple-100 text-purple-800',
                 'Vue': 'bg-emerald-100 text-emerald-800',
                 'React': 'bg-indigo-100 text-indigo-800',

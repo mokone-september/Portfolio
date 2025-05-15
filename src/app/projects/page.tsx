@@ -35,6 +35,13 @@ const projectsPage = () => {
     'A classic snake game built with React and Redux, featuring a simple and intuitive interface, and smooth gameplay.',
       tags: [ "React", "Typescript", "Redux"],
       link: "https://snake-game-pi-rose.vercel.app/",
+    },   
+    {
+      title: "E-commence-Store",
+      description:
+    'This project is a fully responsive and performant e-commerce store dedicated to custom mechanical keyboards. Built with Vue.js 3, TypeScript, and TailwindCSS, it demonstrates core frontend engineering skills including routing, state management, component design, SEO, and testing.',
+    tags: ["Vue", "Typescript", "Vite", "Pinia", "Tailwindcss"],
+      link: "https://e-commerce-store-hazel-xi.vercel.app/",
     },
   ];
   ;
