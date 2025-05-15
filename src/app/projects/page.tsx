@@ -19,7 +19,7 @@ const projectsPage = () => {
       title: "Weather App",
       description:
       'A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.',
-      tags: ["Vite", "Typescript", "Library"],
+      tags: ["Vite", "Typescript", "Enable/disable dark mode"],
       link: "https://atmos-weather-app.vercel.app/",
     },
     {
