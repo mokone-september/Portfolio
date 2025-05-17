@@ -19,14 +19,14 @@ const projectsPage = () => {
       title: "Weather App",
       description:
       'A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.',
-      tags: ["Vite", "Typescript", "Enable/disable dark mode"],
+      tags: ["Vite", "Typescript", "Enable/disable dark mode", "React", "API"],
       link: "https://atmos-weather-app.vercel.app/",
     },
     {
       title: "Quiz App",
       description:
     'A quiz app that allows users to take quizzes on various topics, with features to create, update, and delete quizzes.',
-    tags: ["Vue", "Typescript", "Nuxt", "Pinia"],
+    tags: ["Vue", "Typescript", "Nuxt", "Pinia", "API"],
       link: "https://quiz-nuxt-smoky.vercel.app/",
     },
     {
@@ -42,6 +42,13 @@ const projectsPage = () => {
     'This project is a fully responsive and performant e-commerce store dedicated to custom mechanical keyboards. Built with Vue.js 3, TypeScript, and TailwindCSS, it demonstrates core frontend engineering skills including routing, state management, component design, SEO, and testing.',
     tags: ["Vue", "Typescript", "Vite", "Pinia", "Tailwindcss"],
       link: "https://e-commerce-store-hazel-xi.vercel.app/",
+    },
+   {
+      title: "Recipe App",
+      description:
+    'Flavor Fiesta is a vibrant culinary discovery platform that empowers users to explore global cuisines through an intuitive and interactive interface. Powered by the MealDB API, the app showcases an extensive collection of recipes with detailed information about ingredients, preparation steps, and regional cuisines.',
+    tags: ["Vite","Typescript", "React", "API"],
+      link: "https://recipe-app-liard-seven.vercel.app/",
     },
   ];
   ;
