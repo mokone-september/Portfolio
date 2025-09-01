@@ -23,18 +23,11 @@ const projectsPage = () => {
       link: "https://space-shooter-gamejs.vercel.app/",
     },
     {
-      title: "Quiz App",
-      description:
-    'A quiz app that allows users to take quizzes on various topics, with features to create, update, and delete quizzes.',
-    tags: ["Vue", "Typescript", "Nuxt", "Pinia", "API"],
-      link: "https://quiz-nuxt-smoky.vercel.app/",
-    },
-    {
-      title: "Snake Game",
+      title: "Snake-Gamejs",
       description:
     'A classic snake game built with React and Redux, featuring a simple and intuitive interface, and smooth gameplay.',
-      tags: [ "React", "Typescript", "Redux"],
-      link: "https://snake-game-pi-rose.vercel.app/",
+      tags: [ "React", "JavaScripts", "Redux"],
+      link: "https://snake-gamejs-navy.vercel.app/",
     },   
     {
       title: "E-commence-Store",
