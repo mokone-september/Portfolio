@@ -16,11 +16,11 @@ const projectsPage = () => {
     },
    
     {
-      title: "Weather App",
+      title: "Space-shooter-gamejs",
       description:
-      'A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.',
-      tags: ["Vite", "Typescript", "Enable/disable dark mode", "React", "API"],
-      link: "https://atmos-weather-app.vercel.app/",
+      'Space Shooter is an interactive game where players control a spaceship to destroy enemy ships while avoiding collisions. The game features increasing difficulty levels, score tracking, and visual effects for an engaging gaming experience.',
+      tags: ["HTML5", "JavaScript", "Canvas", "CSS"],
+      link: "https://space-shooter-gamejs.vercel.app/",
     },
     {
       title: "Quiz App",
