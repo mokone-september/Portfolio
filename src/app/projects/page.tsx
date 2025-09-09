@@ -30,18 +30,18 @@ const projectsPage = () => {
       link: "https://snake-gamejs-navy.vercel.app/",
     },   
     {
-      title: "E-commence-Store",
+      title: "Memory Card Gamejs",
       description:
-    'This project is a fully responsive and performant e-commerce store dedicated to custom mechanical keyboards. Built with Vue.js 3, TypeScript, and TailwindCSS, it demonstrates core frontend engineering skills including routing, state management, component design, SEO, and testing.',
-    tags: ["Vue", "Typescript", "Vite", "Pinia", "Tailwindcss"],
-      link: "https://e-commerce-store-hazel-xi.vercel.app/",
+    'A simple memory matching game built with HTML, CSS, and JavaScript.',
+    tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
+      link: "https://memory-gamejs.vercel.app/",
     },
    {
       title: "Recipe App",
       description:
     'Flavor Fiesta is a vibrant culinary discovery platform that empowers users to explore global cuisines through an intuitive and interactive interface. Powered by the MealDB API, the app showcases an extensive collection of recipes with detailed information about ingredients, preparation steps, and regional cuisines.',
     tags: ["Vite","Typescript", "React", "API"],
-      link: "https://recipe-app-liard-seven.vercel.app/",
+      link: "https://recipe-app-inky.vercel.app/",
     },
   ];
   ;
