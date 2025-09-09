@@ -8,11 +8,11 @@ const projectsPage = () => {
   // PROJECTS DATA
   const Projects = [
     {
-      title: "Job Application Tracker",
+      title: "Rock-Paper-Scissors-Gamejs",
       description:
-        `A web app to track job applications, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
-      tags: ["Nextjs", "Typescript", "React Hook Form"],
-      link: "https://job-application-tracker-rho.vercel.app/",
+'A modern, interactive implementation of the classic Rock-Paper-Scissors game with a clean UI and engaging gameplay',
+      tags: ["HTML5", "JavaScript", "Canvas", "CSS"],
+      link: "https://rock-paper-scissors-gamejs.vercel.app/",
     },
    
     {
