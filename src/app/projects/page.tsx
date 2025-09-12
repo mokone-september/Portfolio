@@ -37,11 +37,11 @@ const projectsPage = () => {
       link: "https://memory-gamejs.vercel.app/",
     },
    {
-      title: "Recipe App",
+      title: "E-commerce Clothing Store",
       description:
-    'Flavor Fiesta is a vibrant culinary discovery platform that empowers users to explore global cuisines through an intuitive and interactive interface. Powered by the MealDB API, the app showcases an extensive collection of recipes with detailed information about ingredients, preparation steps, and regional cuisines.',
-    tags: ["Vite","Typescript", "React", "API"],
-      link: "https://recipe-app-inky.vercel.app/",
+    'A modern e-commerce clothing store built with React, Vite, and Tailwind CSS. It features a sleek and responsive design, easy navigation, and a seamless shopping experience.',
+    tags: ["React", "TypeScript", "TailwindCSS", "API"],
+      link: "https://ecommerce-clothing-neon.vercel.app/",
     },
   ];
   ;
