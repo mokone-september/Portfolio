@@ -8,7 +8,7 @@ const projectsPage = () => {
   // PROJECTS DATA
   const Projects = [
     {
-      title: "Rock-Paper-Scissors-Gamejs",
+      title: "Rock-Paper-Scissors-gamejs",
       description:
 'A modern, interactive implementation of the classic Rock-Paper-Scissors game with a clean UI and engaging gameplay',
       tags: ["HTML5", "JavaScript", "Canvas", "CSS"],
