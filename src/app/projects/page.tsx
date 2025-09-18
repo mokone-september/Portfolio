@@ -43,8 +43,22 @@ const projectsPage = () => {
     tags: ["React", "TypeScript", "TailwindCSS", "API"],
       link: "https://ecommerce-clothing-neon.vercel.app/",
     },
+    {
+      title: "Tic-Tac-Toe-Gamejs",
+      description:
+    'A simple, interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. It features a clean UI, two-player mode, and a reset option for endless fun.',
+    tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
+      link: "https://tic-tac-toe-gamejs-plum.vercel.app/",
+    },
+    {
+      title: "Pong-gamejs",
+      description:
+    'A classic Pong game built with React and Tailwind CSS, featuring smooth gameplay and a retro design.',
+    tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
+      link: "https://pong-gamejs.vercel.app/",
+    },
   ];
-  ;
+  
 
   return (
     // PROJECT PAGE
