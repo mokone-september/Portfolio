@@ -44,11 +44,11 @@ const projectsPage = () => {
       link: "https://ecommerce-clothing-neon.vercel.app/",
     },
     {
-      title: "Tic-Tac-Toe-Gamejs",
+  title: "ticket-scheduler",
       description:
-    'A simple, interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. It features a clean UI, two-player mode, and a reset option for endless fun.',
-    tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
-      link: "https://tic-tac-toe-gamejs-plum.vercel.app/",
+      'Ticket Scheduler is a simple and modern web application for scheduling and tracking tasks or tickets. Built with React, Vite, and Material UI (MUI), it provides an intuitive interface for adding tasks with a date picker, and displays scheduled tickets in a clean, responsive layout.',
+      tags: ["Vite", "MUI", "React"],
+        link: "https://ticket-scheduler.vercel.app/",
     },
     {
       title: "Pong-gamejs",

@@ -58,7 +58,8 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
                 'JavaScript': 'bg-yellow-100 text-yellow-800',
                 
                 'Vite': 'bg-purple-100 text-purple-800',
-                'React Hook Form': 'bg-violet-100 text-violet-800'
+                'React Hook Form': 'bg-violet-100 text-violet-800',
+                'MUI': 'bg-blue-100 text-blue-800'
               }[tag] || 'bg-gray-100 text-gray-800';
 
               return (
