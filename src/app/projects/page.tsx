@@ -5,60 +5,58 @@ import { Badge } from "@/components/ui/badge";
 import { Layers } from "lucide-react";
 
 const projectsPage = () => {
-  // PROJECTS DATA
+  // REORGANIZED PROJECTS DATA
   const Projects = [
     {
       title: "Rock-Paper-Scissors-gamejs",
       description:
-'A modern, interactive implementation of the classic Rock-Paper-Scissors game with a clean UI and engaging gameplay',
+        'A modern, interactive implementation of the classic Rock-Paper-Scissors game with a clean UI and engaging gameplay',
       tags: ["HTML5", "JavaScript", "Canvas", "CSS"],
       link: "https://rock-paper-scissors-gamejs.vercel.app/",
     },
-   
     {
       title: "Space-shooter-gamejs",
       description:
-      'Space Shooter is an interactive game where players control a spaceship to destroy enemy ships while avoiding collisions. The game features increasing difficulty levels, score tracking, and visual effects for an engaging gaming experience.',
+        'Space Shooter is an interactive game where players control a spaceship to destroy enemy ships while avoiding collisions. The game features increasing difficulty levels, score tracking, and visual effects for an engaging gaming experience.',
       tags: ["HTML5", "JavaScript", "Canvas", "CSS"],
       link: "https://space-shooter-gamejs.vercel.app/",
     },
     {
-      title: "Snake-Gamejs",
-      description:
-    'A classic snake game built with React and Redux, featuring a simple and intuitive interface, and smooth gameplay.',
-      tags: [ "React", "JavaScripts", "Redux"],
-      link: "https://snake-gamejs-navy.vercel.app/",
-    },   
-    {
       title: "Memory Card Gamejs",
       description:
-    'A simple memory matching game built with HTML, CSS, and JavaScript.',
-    tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
+        'A simple memory matching game built with HTML, CSS, and JavaScript.',
+      tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
       link: "https://memory-gamejs.vercel.app/",
     },
-   {
+    {
       title: "E-commerce Clothing Store",
       description:
-    'A modern e-commerce clothing store built with React, Vite, and Tailwind CSS. It features a sleek and responsive design, easy navigation, and a seamless shopping experience.',
-    tags: ["React", "TypeScript", "TailwindCSS", "API"],
+        'A modern e-commerce clothing store built with React, Vite, and Tailwind CSS. It features a sleek and responsive design, easy navigation, and a seamless shopping experience.',
+      tags: ["React", "TypeScript", "TailwindCSS", "API"],
       link: "https://ecommerce-clothing-neon.vercel.app/",
-    },
-    {
-  title: "ticket-scheduler",
-      description:
-      'Ticket Scheduler is a simple and modern web application for scheduling and tracking tasks or tickets. Built with React, Vite, and Material UI (MUI), it provides an intuitive interface for adding tasks with a date picker, and displays scheduled tickets in a clean, responsive layout.',
-      tags: ["Vite", "MUI", "React"],
-        link: "https://ticket-scheduler.vercel.app/",
     },
     {
       title: "Pong-gamejs",
       description:
-    'A classic Pong game built with React and Tailwind CSS, featuring smooth gameplay and a retro design.',
-    tags: ["HTML5", "JavaScript", "CSS", "Canvas"],
+        'A classic Pong game built with React and Tailwind CSS, featuring smooth gameplay and a retro design.',
+      tags: ["React", "JavaScript", "TailwindCSS"],
       link: "https://pong-gamejs.vercel.app/",
     },
+    {
+      title: "Snake-Gamejs",
+      description:
+        'A classic snake game built with React and Redux, featuring a simple and intuitive interface, and smooth gameplay.',
+      tags: ["React", "JavaScript", "Redux"],
+      link: "https://snake-gamejs-navy.vercel.app/",
+    },
+    {
+      title: "ticket-scheduler",
+      description:
+        'Ticket Scheduler is a simple and modern web application for scheduling and tracking tasks or tickets. Built with React, Vite, and Material UI (MUI), it provides an intuitive interface for adding tasks with a date picker, and displays scheduled tickets in a clean, responsive layout.',
+      tags: ["Vite", "MUI", "React"],
+      link: "https://ticket-scheduler.vercel.app/",
+    },
   ];
-  
 
   return (
     // PROJECT PAGE
