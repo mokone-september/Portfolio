@@ -31,8 +31,10 @@ export interface BadgeProps
 function Badge({ className, variant, ...props }: BadgeProps) {
   return (
     <FramerWrapper y={0} scale={0.5}>
-
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+      <div
+        className={cn(badgeVariants({ variant }), className)}
+        {...props}
+      />
     </FramerWrapper>
   )
 }

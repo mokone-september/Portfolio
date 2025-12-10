@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import {  Poppins, Rubik } from "next/font/google";
+import { Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import { siteConfig } from "./page";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-poppins",
 });
+
 const rubik = Rubik({
   subsets: ["latin"],
   weight: "600",
@@ -23,7 +25,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
 
-  // added new keywords for seo
   keywords: [
     "TK Mokone",
     "Thabiso",
@@ -33,21 +34,21 @@ export const metadata: Metadata = {
     "portfolio",
     "web developer",
     "web",
-    "web dev",
     "developer",
-    "PROGRAMMER ",
-    "programmer ",
+    "programmer",
     "TK MOKONE",
     "website",
     "@mokone-september",
     "mokone-september developer",
   ],
+
   authors: [
     {
       name: "Thabiso Kenneth Mokone",
       url: "",
     },
   ],
+
   creator: "Taqui imam",
 
   openGraph: {
@@ -59,6 +60,7 @@ export const metadata: Metadata = {
     images: [`${siteConfig.url}/og-image.png`],
     siteName: siteConfig.name,
   },
+
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -66,6 +68,7 @@ export const metadata: Metadata = {
     images: [`${siteConfig.url}/og-image.png`],
     creator: "Thabiso Kenneth Mokone",
   },
+
   icons: {
     icon: "/favicon.ico",
   },
@@ -81,11 +84,9 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${rubik.variable}`}>
         <main
           className={cn(
-            "flex  relative  break-words h-dvh min-h-screen items-center justify-between pt-14 pb-4 px-40 max-md:p-4 bg-transparent max-sm:pt-20 bg-[radial-gradient(#2f7df4_1px,transparent_1px)] [background-size:16px_16px]",
-            { "bg-white": "#E6E7EB" }
+            "flex relative break-words h-dvh min-h-screen items-center justify-between pt-14 pb-4 px-40 max-md:p-4 bg-transparent max-sm:pt-20 bg-[radial-gradient(#2f7df4_1px,transparent_1px)] [background-size:16px_16px]"
           )}
         >
-          {/* NAVBAR ->  */}
           <Navbar />
           {children}
         </main>

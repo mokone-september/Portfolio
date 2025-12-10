@@ -44,22 +44,16 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
                 'Nextjs': 'bg-teal-100 text-teal-800',
                 'Redux': 'bg-yellow-100 text-yellow-800',
                 'Pinia': 'bg-blue-100 text-blue-800',
-                'Typescript': 'bg-red-100 text-red-800',
+                'TypeScript': 'bg-red-100 text-red-800',
                 'Tailwindcss': 'bg-orange-100 text-orange-800',
                 'Nuxt': 'bg-purple-100 text-purple-800',
                 'Vue': 'bg-emerald-100 text-emerald-800',
-                'React': 'bg-indigo-100 text-indigo-800',
+                'React': 'bg-pink-100 text-pink-800',
                 'API': 'bg-indigo-100 text-indigo-800',
                 'Library': 'bg-pink-100 text-pink-800',
-                'Enable/disable dark mode': 'bg-cyan-100 text-cyan-800',
-                'Canvas': 'bg-lime-100 text-lime-800',
-                'HTML5': 'bg-rose-100 text-rose-800',
-                'CSS': 'bg-fuchsia-100 text-fuchsia-800',
-                'JavaScript': 'bg-yellow-100 text-yellow-800',
-                
-                'Vite': 'bg-purple-100 text-purple-800',
-                'React Hook Form': 'bg-violet-100 text-violet-800',
-                'MUI': 'bg-blue-100 text-blue-800'
+                'Dark mode': 'bg-cyan-100 text-cyan-800',
+                'Vite': 'bg-green-100 text-purple-800',
+                'React Hook Form': 'bg-violet-100 text-violet-800'
               }[tag] || 'bg-gray-100 text-gray-800';
 
               return (

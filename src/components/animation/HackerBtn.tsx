@@ -35,7 +35,7 @@ const HackerBtn = ({ label, onClick }: { label: string, onClick: () => void }) =
 
   return (
     <Button size={'lg'} className='text-base px-5 py-6' onMouseEnter={startScrambling} onClick={onClick}>
-      <Download className="mx-1" />
+      <Download className="mx-2" />
       {displayText}
     </Button>
   );

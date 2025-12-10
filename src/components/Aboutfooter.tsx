@@ -1,32 +1,41 @@
-import {Circle, Dna, Globe2, Languages} from "lucide-react"
+import { ChevronRightSquareIcon, Dna, Globe, Languages } from "lucide-react";
 
 const Aboutfooter = () => {
+  const items = [
+    {
+      name: "Language",
+      answer: "English & Afrikaans",
+      Icon: Languages,
+    },
+    {
+      name: "Nationality",
+      answer: "South Africa",
+      Icon: Globe,
+    },
+    {
+      name: "Gender",
+      answer: "Male",
+      Icon: Dna,
+    },
+  ];
 
+  return (
+    <>
+      {items.map(({ name, answer, Icon }, index) => (
+        <div className="p-1 w-fit relative" key={index}>
+          <h1 className="gap-2 text-3xl font-poppins text-primary font-semibold flex items-center icon_underline max-sm:text-2xl">
+            <Icon className="h-8 w-8" />
+            {name}
+          </h1>
 
-    const items = [
-        {name:"Language", answer:"English & Afrikaans", icon:<Languages className="h-11 w-11" />},
-        {name:"Nationality",answer:"South Africa", icon:<Globe2   className="h-8 w-8" />},
-        {name:"Gender",answer:"Male", icon:<Dna  className="h-8 w-8" />},
-    ]
+          <div className="flex gap-2 items-center text-xl text-primary pt-3 max-lg:justify-start">
+            <ChevronRightSquareIcon className="h-4 w-4" />
+            {answer}
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
 
-
-    return(
-        <>
-        {
-            items.map((val, indx) => {
-              return(
-                <div className="p-1 w-fit relative" key={indx}>
-                <h1 className="gap-2 text-3xl font-poppins text-primary font-semibold relative flex icon_underline max-sm:text-2xl">{val.icon}{val.name}</h1>
-                <div className="flex gap-2 justify-center items-center flex-row text-xl text-primary pt-3 max-lg:justify-start">
-                <Circle className="h-3 w-3" /> {val.answer}
-                </div>
-            </div>
-              )
-            })
-          }
-         
-        </>
-    )
-}
-
-export default Aboutfooter
+export default Aboutfooter;

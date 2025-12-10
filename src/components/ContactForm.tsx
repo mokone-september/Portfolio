@@ -9,53 +9,64 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { Button } from "./ui/button";
 import { SendEmail } from "./SendEmail";
 
 const ContactForm = () => {
   return (
-    <Card>
+    <Card className="w-full max-w-md">
       <form
-        action={async (FormData) => {
+        action={async (formData) => {
           "use server";
-          await SendEmail(FormData);
+          await SendEmail(formData);
         }}
       >
         <CardHeader>
           <CardTitle className="icon_underline">Send me a mail.</CardTitle>
           <CardDescription>
-            Once form is submit you will be redirect to home page.
+            Once submitted, you’ll be redirected to the home page.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="grid w-full max-w-sm items-center gap-1.5 mt-2">
+
+        <CardContent className="space-y-4">
+          {/* Name */}
+          <div className="grid gap-1.5">
             <Label htmlFor="name">Name</Label>
             <Input
+              id="name"
               type="text"
               name="name"
               required
               placeholder="Enter your name"
             />
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5 mt-2">
+
+          {/* Email */}
+          <div className="grid gap-1.5">
             <Label htmlFor="email">Email</Label>
             <Input
+              id="email"
               type="email"
               name="SenderEmail"
               required
               placeholder="Enter your email"
             />
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5 mt-2">
+
+          {/* Message */}
+          <div className="grid gap-1.5">
             <Label htmlFor="message">Your Message</Label>
             <textarea
-              placeholder="Your message here..."
+              id="message"
               name="message"
               required
-              className=" resize-none flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              placeholder="Your message here..."
+              className="min-h-[100px] w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             ></textarea>
           </div>
         </CardContent>
+
         <CardFooter>
           <Button type="submit" className="w-full">
             Submit
