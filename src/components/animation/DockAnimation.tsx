@@ -217,7 +217,8 @@ export function DockLabel({ children, className, isHovered }: DockLabelProps) {
 
 /* ICON */
 export function DockIcon({ children, className, width }: DockIconProps) {
-  const widthHalf = useTransform(width ?? 40, (val) => val / 2);
+  const fallbackWidth = useMotionValue(40);
+  const widthHalf = useTransform(width ?? fallbackWidth, (val) => val / 2);
 
   return (
     <motion.div
