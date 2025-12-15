@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import FramerWrapper from "./animation/FramerWrapper";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 interface ProjectCardProps {
   value: {
@@ -68,22 +68,37 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
           </div>
         </CardContent>
 
-        <CardFooter className="pt-2 ">
-          <Link
-            href={value.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({ 
-                variant: "default", 
-                size: "sm" 
-              }),
-              "w-fit transition-all hover:translate-y-[-2px] hover:shadow-md group"
-            )}
-          >
-            Visit Project 
-            <ArrowUpRight className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-          </Link>
+        <CardFooter className="pt-2">
+          <div className="w-full flex items-center justify-between">
+            <Link
+              href={value.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ 
+                  variant: "default", 
+                  size: "sm" 
+                }),
+                "w-fit transition-all hover:translate-y-[-2px] hover:shadow-md group"
+              )}
+            >
+              Visit Project 
+              <ArrowUpRight className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+            </Link>
+
+            <Link
+              href={"https://github.com/mokone-september"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "ghost", size: "sm" }),
+                "inline-flex items-center gap-2 text-sm"
+              )}
+            >
+              <Github className="h-4 w-4" />
+              <span className="hidden sm:inline">GitHub</span>
+            </Link>
+          </div>
         </CardFooter>
       </Card>
     </FramerWrapper>
