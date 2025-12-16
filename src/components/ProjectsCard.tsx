@@ -17,6 +17,7 @@ interface ProjectCardProps {
     description: string;
     tags: string[];
     link: string;
+    github?: string;
   };
   num: number;
 }
@@ -69,7 +70,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
         </CardContent>
 
         <CardFooter className="pt-2">
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between gap-3">
             <Link
               href={value.link}
               target="_blank"
@@ -86,18 +87,20 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
               <ArrowUpRight className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
             </Link>
 
-            <Link
-              href={"https://github.com/mokone-september"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "ghost", size: "sm" }),
-                "inline-flex items-center gap-2 text-sm"
-              )}
-            >
-              <Github className="h-4 w-4" />
-              <span className="hidden sm:inline">GitHub</span>
-            </Link>
+            {value.github && (
+              <Link
+                href={value.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "sm" }),
+                  "inline-flex items-center gap-2 text-sm"
+                )}
+              >
+                <span className="hidden sm:inline">github</span>
+                <Github className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </CardFooter>
       </Card>

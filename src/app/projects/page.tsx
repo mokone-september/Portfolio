@@ -11,6 +11,7 @@ const ProjectsPage = () => {
       description: `A web app to track job applications, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
       tags: ["Nextjs", "TypeScript", "React Hook Form"],
       link: "https://job-application-tracker-rho.vercel.app/",
+      github: "https://github.com/mokone-september",
     },
     {
       title: "Weather App",
@@ -18,6 +19,7 @@ const ProjectsPage = () => {
         "A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.",
       tags: ["Vite", "TypeScript", "Dark mode", "React", "API"],
       link: "https://atmos-weather-app.vercel.app/",
+      github: "https://github.com/mokone-september",
     },
     {
       title: "Quiz App",
@@ -25,6 +27,7 @@ const ProjectsPage = () => {
         "A quiz app that allows users to take quizzes on various topics, with features to create, update, and delete quizzes.",
       tags: ["Vue", "TypeScript", "Nuxt", "Pinia", "API"],
       link: "https://quiz-nuxt-smoky.vercel.app/",
+      github: "https://github.com/mokone-september/quiz-nuxt",
     },
     {
       title: "Snake Game",
@@ -32,6 +35,7 @@ const ProjectsPage = () => {
         "A classic snake game built with React and Redux, featuring a clean UI and smooth gameplay.",
       tags: ["React", "TypeScript", "Redux"],
       link: "https://snake-game-pi-rose.vercel.app/",
+      github: "https://github.com/mokone-september/snake-game",
     },
     {
       title: "E-commerce Store",
@@ -39,6 +43,7 @@ const ProjectsPage = () => {
         "A fully responsive e-commerce store dedicated to custom mechanical keyboards. Built with Vue.js 3, TypeScript, and TailwindCSS, showcasing routing, state management, SEO, and testing.",
       tags: ["Vue", "TypeScript", "Vite", "Pinia", "Tailwindcss"],
       link: "https://e-commerce-store-hazel-xi.vercel.app/",
+      github: "https://github.com/mokone-september/e-commerce-store",
     },
     {
       title: "Recipe App",
@@ -46,6 +51,7 @@ const ProjectsPage = () => {
         "A culinary explorer powered by the MealDB API, allowing users to browse recipes with detailed steps, ingredients, and global cuisines.",
       tags: ["Vite", "TypeScript", "React", "API"],
       link: "https://recipe-app-liard-seven.vercel.app/",
+      github: "https://github.com/mokone-september/recipe-app",
     },
   ];
 
