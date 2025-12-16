@@ -176,7 +176,7 @@ export function DockItem({ children, className }: DockItemProps) {
       role="button"
     >
       {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { width, isHovered }),
+        cloneElement(child as React.ReactElement, { width, isHovered } as any),
       )}
     </motion.div>
   );
