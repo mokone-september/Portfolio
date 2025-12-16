@@ -11,7 +11,7 @@ const ProjectsPage = () => {
       description: `A web app to track job applications, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
       tags: ["Nextjs", "TypeScript", "React Hook Form"],
       link: "https://job-application-tracker-rho.vercel.app/",
-      github: "https://github.com/mokone-september",
+      github: "https://github.com/mokone-september/job-application-tracker",
     },
     {
       title: "Weather App",
@@ -19,7 +19,7 @@ const ProjectsPage = () => {
         "A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.",
       tags: ["Vite", "TypeScript", "Dark mode", "React", "API"],
       link: "https://atmos-weather-app.vercel.app/",
-      github: "https://github.com/mokone-september",
+      github: "https://github.com/mokone-september/atmos-weather-app",
     },
     {
       title: "Quiz App",
