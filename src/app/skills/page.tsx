@@ -3,6 +3,7 @@ import SkillsFooter from "@/components/SkillsFotter";
 import { Badge } from "@/components/ui/badge";
 import { LightbulbIcon } from "lucide-react";
 import FramerWrapper from "@/components/animation/FramerWrapper";
+import Image from "next/image";
 
 const SkillsPage = () => {
   const programmingLanguages = [
@@ -88,12 +89,23 @@ const SkillsPage = () => {
 
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
+      {/* Right-side reflecting image (hidden on small screens). Positioned near bottom-right and placed behind content. */}
+      <div className="hidden lg:block absolute right-0 bottom-6 translate-x-20 pointer-events-none select-none z-0">
+        <Image
+          src="/growth.png"
+          alt="growth illustration"
+          width={300}
+          height={300}
+          className="opacity-95"
+          priority={false}
+        />
+      </div>
       <Badge variant="secondary" className="gap-1.5 py-1">
         <LightbulbIcon className="w-4 h-4" />
         My Skills
       </Badge>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 relative z-10">
         <Heading>My Technical Experience & Skills</Heading>
 
         <FramerWrapper y={0} x={200}>
