@@ -7,11 +7,11 @@ import { Layers } from "lucide-react";
 const ProjectsPage = () => {
   const projects = [
     {
-      title: "Job Application Tracker",
-      description: `A web app to track job applications, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
-      tags: ["Nextjs", "TypeScript", "React Hook Form"],
-      link: "https://job-application-tracker-rho.vercel.app/",
-      github: "https://github.com/mokone-september/job-application-tracker",
+      title: "ToDo-app",
+      description: `A web app to track ToDo-app, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
+      tags: ["React", "TypeScript", "HTML", "Redux", "Tailwindcss"],
+      link: "",
+      github: "https://github.com/mokone-september/ToDo-app",
     },
     {
       title: "Weather App",

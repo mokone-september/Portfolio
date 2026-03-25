@@ -54,7 +54,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
                 'Library': 'bg-pink-100 text-pink-800',
                 'Dark mode': 'bg-cyan-100 text-cyan-800',
                 'Vite': 'bg-green-100 text-purple-800',
-                'React Hook Form': 'bg-violet-100 text-violet-800'
+                'HTML': 'bg-violet-100 text-violet-800'
               }[tag] || 'bg-gray-100 text-gray-800';
 
               return (
