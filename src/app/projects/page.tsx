@@ -8,9 +8,9 @@ const ProjectsPage = () => {
   const projects = [
     {
       title: "ToDo-app",
-      description: `A web app to track ToDo-app, with features to add, update, delete, and add notes, plus filtering and sorting by status or date.`,
+      description: `A comprehensive task management web application built with React and Redux, offering full CRUD operations, note-taking capabilities, and advanced filtering and sorting by status and date.`,
       tags: ["React", "TypeScript", "HTML", "Redux", "Tailwindcss"],
-      link: "",
+      link: "to-do-app-sand-eight.vercel.app",
       github: "https://github.com/mokone-september/ToDo-app",
     },
     {
