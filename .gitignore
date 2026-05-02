@@ -29,6 +29,13 @@ yarn-error.log*
 .env*.local
 .env
 
+# local workspace / editor files
+.agents/
+.claude/
+.source/
+.vscode/
+.zed/
+
 # vercel
 .vercel
 
