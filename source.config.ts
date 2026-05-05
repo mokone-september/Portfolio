@@ -26,7 +26,7 @@ const sourceConfig: SourceConfig = {
     src: "./src",
     public: "./public",
     components: "./src/components",
-    assets: "./public/assets",
+    assets: "./src/assets",
   },
   features: {
     enableBiome: true,
