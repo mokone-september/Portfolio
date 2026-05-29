@@ -11,6 +11,7 @@ import {
   Mail,
   MoreHorizontal,
   User,
+  Globe,
 } from "lucide-react";
 
 import {
@@ -35,6 +36,7 @@ const Navbar = () => {
     { title: "Education", icon: <GraduationCap />, href: "/education" },
     { title: "Work", icon: <Briefcase />, href: "/work" },
     { title: "Projects", icon: <FolderGit2 />, href: "/projects" },
+    { title: "Blog", icon: <Globe />, href: "/blog" },
     { title: "Contact us", icon: <Mail />, href: "/contact" },
     { title: "More", icon: <MoreHorizontal />, href: "/more" },
   ];
