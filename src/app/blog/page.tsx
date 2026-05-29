@@ -3,7 +3,7 @@ import Heading from "@/components/Heading";
 import { getAllMdxPosts } from "@/lib/mdx";
 
 export default async function BlogPage() {
-  const posts = await getAllMdxPosts();
+  const posts = getAllMdxPosts();
 
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">

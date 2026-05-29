@@ -1,21 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Moved from experimental.serverComponentsExternalPackages
-    // to the top-level `serverExternalPackages` option in newer Next.js.
-    serverExternalPackages: [
-        '@react-email/render',
-    ],
-    // If you have other experimental options, keep them under `experimental`.
+    serverExternalPackages: ["@react-email/render"],
     experimental: {
-        // images:{
-        //     remotePatterns:[
-        //         {
-        //             protocol: 'https',
-        //             hostname: 'cdn.jsdelivr.net',
-        //         }
-        //     ]
-        // }
-    }
-}
+        // If you have other experimental options, keep them under `experimental`.
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

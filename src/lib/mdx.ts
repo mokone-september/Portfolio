@@ -1,10 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote";
-import remarkGfm from "remark-gfm";
-
-const postsDir = path.join(process.cwd(), "src", "content", "mdx");
+import { compile } from "@mdx-js/mdx";
 
 export type MdxPost = {
   slug: string;
@@ -13,49 +10,52 @@ export type MdxPost = {
   excerpt?: string;
 };
 
-export async function getAllMdxPosts(): Promise<MdxPost[]> {
-  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdx"));
+export type MdxPostWithCode = MdxPost & {
+  code: string;
+};
 
-  const posts = files.map((file) => {
-    const full = path.join(postsDir, file);
-    const raw = fs.readFileSync(full, "utf8");
-    const { data } = matter(raw);
+const postsDir = path.join(process.cwd(), "src", "content", "mdx");
 
-    return {
-      slug: data.slug ?? file.replace(/\.mdx?$/, ""),
-      title: data.title ?? "Untitled",
-      date: data.date ?? "1970-01-01",
-      excerpt: data.excerpt ?? "",
-    } as MdxPost;
-  });
+export function getAllMdxPosts(): MdxPost[] {
+  const files = fs.readdirSync(postsDir).filter((filename) => filename.endsWith(".mdx"));
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return files
+    .map((filename) => {
+      const fullPath = path.join(postsDir, filename);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
+
+      return {
+        slug: data.slug ?? filename.replace(/\.mdx?$/, ""),
+        title: data.title ?? "Untitled",
+        date: data.date ?? "1970-01-01",
+        excerpt: data.excerpt ?? "",
+      };
+    })
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export async function getMdxPostBySlug(slug: string) {
-  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdx"));
-  const file = files.find((f) => f.replace(/\.mdx?$/, "") === slug || f.replace(/\.mdx?$/, "") === slug.replace(/-mdx$/, ""));
+export async function getMdxPostBySlug(slug: string): Promise<MdxPostWithCode | null> {
+  const files = fs.readdirSync(postsDir).filter((filename) => filename.endsWith(".mdx"));
+  const file = files.find((filename) => filename.replace(/\.mdx?$/, "") === slug);
   if (!file) return null;
 
-  const full = path.join(postsDir, file);
-  const raw = fs.readFileSync(full, "utf8");
-  const { data, content } = matter(raw);
+  const fullPath = path.join(postsDir, file);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
 
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [],
-    },
-    scope: data,
-  });
+  const code = String(
+    await compile(content, {
+      format: "mdx",
+      outputFormat: "function-body",
+    })
+  );
 
   return {
-    meta: {
-      slug: data.slug ?? file.replace(/\.mdx?$/, ""),
-      title: data.title ?? "Untitled",
-      date: data.date ?? "1970-01-01",
-      excerpt: data.excerpt ?? "",
-    },
-    source: mdxSource,
+    slug: data.slug ?? file.replace(/\.mdx?$/, ""),
+    title: data.title ?? "Untitled",
+    date: data.date ?? "1970-01-01",
+    excerpt: data.excerpt ?? "",
+    code,
   };
 }

@@ -28,7 +28,8 @@
       ],
       "@assets/*": [
         "./src/assets/*"
-      ]
+      ],
+      "contentlayer/generated": [".contentlayer/generated/index.mjs"]
     },
     "plugins": [
       {
