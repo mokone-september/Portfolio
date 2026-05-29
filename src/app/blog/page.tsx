@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getAllPosts } from "@/content/blog/posts";
 import Heading from "@/components/Heading";
+import { getAllMdxPosts } from "@/lib/mdx";
 
-export default function BlogPage() {
-  const posts = getAllPosts();
+export default async function BlogPage() {
+  const posts = await getAllMdxPosts();
 
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">

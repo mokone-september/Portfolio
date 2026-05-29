@@ -27,6 +27,12 @@
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7"
   },
+  "optionalDependencies": {
+    "@mdx-js/react": "^2.3.0",
+    "gray-matter": "^4.0.3",
+    "next-mdx-remote": "^4.4.1",
+    "remark-gfm": "^3.0.1"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.4.13",
     "@types/node": "^20",
