@@ -3,7 +3,8 @@ import { getAllMdxPosts, getMdxPostBySlug } from "@/lib/mdx";
 import MdxPostContent from "@/components/MdxPostContent";
 
 type Props = {
-  params: { slug: string };
+  // `params` can be a Promise in the app router; allow awaiting it.
+  params: { slug: string } | Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -12,7 +13,9 @@ export async function generateStaticParams() {
 }
 
 export default async function PostPage({ params }: Props) {
-  const post = await getMdxPostBySlug(params.slug);
+  // `params` may be a Promise in Next.js; await it before accessing.
+  const { slug } = await params;
+  const post = await getMdxPostBySlug(slug);
   if (!post) notFound();
 
   return (

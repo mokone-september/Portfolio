@@ -3,6 +3,10 @@ import path from "path";
 import matter from "gray-matter";
 import { compile } from "@mdx-js/mdx";
 
+function normalizeSlug(value: unknown) {
+  return String(value ?? "").trim();
+}
+
 export type MdxPost = {
   slug: string;
   title: string;
@@ -26,7 +30,7 @@ export function getAllMdxPosts(): MdxPost[] {
       const { data } = matter(fileContents);
 
       return {
-        slug: data.slug ?? filename.replace(/\.mdx?$/, ""),
+        slug: normalizeSlug(data.slug) || filename.replace(/\.mdx?$/, ""),
         title: data.title ?? "Untitled",
         date: data.date ?? "1970-01-01",
         excerpt: data.excerpt ?? "",
@@ -37,7 +41,15 @@ export function getAllMdxPosts(): MdxPost[] {
 
 export async function getMdxPostBySlug(slug: string): Promise<MdxPostWithCode | null> {
   const files = fs.readdirSync(postsDir).filter((filename) => filename.endsWith(".mdx"));
-  const file = files.find((filename) => filename.replace(/\.mdx?$/, "") === slug);
+  const file = files.find((filename) => {
+    const filenameSlug = filename.replace(/\.mdx?$/, "");
+    if (filenameSlug === slug) return true;
+
+    const fullPath = path.join(postsDir, filename);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data } = matter(fileContents);
+    return normalizeSlug(data.slug) === slug;
+  });
   if (!file) return null;
 
   const fullPath = path.join(postsDir, file);
@@ -52,7 +64,7 @@ export async function getMdxPostBySlug(slug: string): Promise<MdxPostWithCode | 
   );
 
   return {
-    slug: data.slug ?? file.replace(/\.mdx?$/, ""),
+    slug: normalizeSlug(data.slug) || file.replace(/\.mdx?$/, ""),
     title: data.title ?? "Untitled",
     date: data.date ?? "1970-01-01",
     excerpt: data.excerpt ?? "",
