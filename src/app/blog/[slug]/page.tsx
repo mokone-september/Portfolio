@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 import { getAllMdxPosts, getMdxPostBySlug } from "@/lib/mdx";
 import MdxPostContent from "@/components/MdxPostContent";
 
@@ -24,9 +25,10 @@ export default async function PostPage({ params }: Props) {
       <div className="mb-4">
         <Link
           href="/blog"
-          className="inline-flex items-center rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-neutral-800 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
+          className="group inline-flex items-center rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-neutral-800 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
         >
-          ← Back to blog
+          Back to blog
+          <ArrowUpLeft className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
         </Link>
       </div>
       <h1 className="text-2xl font-bold">{post.title}</h1>

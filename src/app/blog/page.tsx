@@ -41,11 +41,11 @@ export default async function BlogPage() {
                   variant: "default", 
                   size: "sm" 
                 }),
-                "w-fit transition-all hover:translate-y-[-2px] hover:shadow-md group"
+                "w-fit transition-all hover:translate-y-[-2px] hover:shadow-md group bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500"
               )}
             >
               Read More
-              <ArrowUpRight className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+              <ArrowUpRight className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-white" />
             </Link>
             </div>
           </article>
