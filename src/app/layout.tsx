@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Rubik } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
@@ -82,6 +83,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${rubik.variable}`}>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(function () {
+            try {
+              var theme = localStorage.getItem('theme');
+              if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch (e) {}
+          })();`}
+        </Script>
         <main
           className={cn(
             "flex relative min-h-screen flex-col items-center justify-start pt-14 pb-4 px-4 sm:px-10 lg:px-40 max-w-7xl mx-auto bg-transparent max-sm:pt-20 bg-[radial-gradient(#2f7df4_1px,transparent_1px)] [background-size:16px_16px]"

@@ -26,6 +26,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -55,15 +56,17 @@ const Navbar = () => {
   return (
     <motion.div
       className={cn(
-        "fixed left-1/2 top-auto right-auto bottom-4 -translate-x-1/2 flex justify-center bg-transparent z-[9999999] sm:top-5 sm:bottom-auto sm:left-0 sm:right-0 sm:translate-x-0",
+        "fixed top-5 left-0 right-0 flex justify-center bg-transparent z-[9999999]",
         scrolling ? "hidden" : "block"
       )}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
-      <Dock className="items-end pb-3 rounded-full">
-        {menu.map((item, index) => {
+      <div className="flex items-center gap-2 sm:gap-3 justify-center">
+        <div className="flex items-center gap-3 bg-transparent rounded-full px-2">
+          <Dock className="items-end pb-3 rounded-full">
+          {menu.map((item, index) => {
           const isActive = pathname === item.href;
 
           return (
@@ -83,7 +86,12 @@ const Navbar = () => {
             </Link>
           );
         })}
-      </Dock>
+          </Dock>
+          <div className="flex items-center pl-2">
+            <ThemeToggle />
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

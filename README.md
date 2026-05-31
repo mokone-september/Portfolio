@@ -52,12 +52,12 @@ Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 - Add blog section
 - Mobile-first design
 - Add animations with Framer Motion ✅
-- Add light/dark mode persistence
+- Add light/dark mode persistence ✅
 - Multi-language support
 
 ## 📬 Contact
 
-- **Email**: mokoneseptember@gmail.com
+- **Email**: [mokoneseptember@gmail.com](mailto:mokoneseptember@gmail.com)
 - **LinkedIn**: [linkedin.com/in/mokone-september](https://www.linkedin.com/in/mokone-september)
 
 Built with ❤️ and a vision to grow. Let’s connect and build the future together.
