@@ -51,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 
 - Add blog section
 - Mobile-first design
-- Add animations with Framer Motion
+- Add animations with Framer Motion ✅
 - Add light/dark mode persistence
 - Multi-language support
 

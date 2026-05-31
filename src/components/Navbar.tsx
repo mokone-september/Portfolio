@@ -14,6 +14,8 @@ import {
   Globe,
 } from "lucide-react";
 
+import { motion } from "framer-motion";
+
 import {
   Dock,
   DockIcon,
@@ -51,11 +53,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
+    <motion.div
       className={cn(
         "fixed left-1/2 top-auto right-auto bottom-4 -translate-x-1/2 flex justify-center bg-transparent z-[9999999] sm:top-5 sm:bottom-auto sm:left-0 sm:right-0 sm:translate-x-0",
         scrolling ? "hidden" : "block"
       )}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <Dock className="items-end pb-3 rounded-full">
         {menu.map((item, index) => {
@@ -79,7 +84,7 @@ const Navbar = () => {
           );
         })}
       </Dock>
-    </div>
+    </motion.div>
   );
 };
 
