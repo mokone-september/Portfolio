@@ -14,31 +14,29 @@ export const siteConfig = {
 
 export default function Home() {
   return (
-    <>
-      {/* LEFT SIDE */}
+    <div className="flex w-full flex-col gap-10 px-0 sm:px-4 lg:flex-row lg:items-start lg:gap-20">
       <FramerWrapper
-        className="h-full w-auto flex flex-col justify-start gap-4"
+        className="flex w-full flex-col justify-start gap-6 lg:w-1/2 items-center text-center lg:items-start lg:text-left"
         y={0}
         x={-100}
       >
         <HeroTexts />
-        <div className="h-fit w-full p-4 flex gap-4">
+        <div className="flex flex-wrap gap-4">
+          <div className="flex w-full flex-wrap justify-center gap-4 lg:justify-start">
           <SocialLinks />
+          </div>
         </div>
         <DownLoadResumeBtn />
       </FramerWrapper>
 
-      {/* RIGHT SIDE IMAGE */}
       <FramerWrapper
-        className="h-full w-[47%] relative block max-lg:hidden"
+        className="relative w-full max-w-lg self-center lg:w-1/2"
         y={0}
         x={100}
       >
         <HeroImage />
       </FramerWrapper>
-
-      {/* GITHUB BUTTON */}
       <GithubBtn />
-    </>
+    </div>
   );
 }

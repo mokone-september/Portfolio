@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "fixed top-5 left-0 right-0 flex justify-center bg-transparent z-[9999999]",
+        "fixed left-1/2 top-auto right-auto bottom-4 -translate-x-1/2 flex justify-center bg-transparent z-[9999999] sm:top-5 sm:bottom-auto sm:left-0 sm:right-0 sm:translate-x-0",
         scrolling ? "hidden" : "block"
       )}
     >
