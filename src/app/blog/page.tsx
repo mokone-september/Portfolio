@@ -12,7 +12,7 @@ export default async function BlogPage() {
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
       <div className="flex flex-col gap-3">
-        <Heading>Blog</Heading>
+        <Heading>My Blog</Heading>
         <FramerWrapper y={0} x={200}>
           <p className="font-poppins text-lg w-full text-primary max-sm:text-base">
             Short notes and tutorials.
