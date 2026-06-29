@@ -109,13 +109,14 @@ The repository includes `public/og-image.png` which is used as a preview in this
 - Mobile-first design (done)
 - Add animations with Framer Motion (done)
 - Add light/dark mode persistence (done)
-- Multi-language support (planned)
+- Multi-language support (done)
+  - Spanish route support at `/es`
 
 ---
 
 ## 📬 Contact
 
 - Email: [mokoneseptember@gmail.com](mailto:mokoneseptember@gmail.com)
-- LinkedIn: https://www.linkedin.com/in/mokone-september
+- LinkedIn: [https://www.linkedin.com/in/mokone-september](https://www.linkedin.com/in/mokone-september)
 
 Built with ❤️ — feel free to open an issue or PR with suggestions.

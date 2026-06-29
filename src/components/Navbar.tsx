@@ -27,21 +27,23 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
+import { buildLocalePath, getLocaleFromPath, translations } from "@/lib/i18n";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [scrolling, setScrolling] = useState(false);
 
   const menu = [
-    { title: "Home", icon: <HomeIcon />, href: "/" },
-    { title: "About", icon: <User />, href: "/about" },
-    { title: "Skills", icon: <LightbulbIcon />, href: "/skills" },
-    { title: "Education", icon: <GraduationCap />, href: "/education" },
-    { title: "Work", icon: <Briefcase />, href: "/work" },
-    { title: "Projects", icon: <FolderGit2 />, href: "/projects" },
-    { title: "Blog", icon: <Globe />, href: "/blog" },
-    { title: "Contact us", icon: <Mail />, href: "/contact" },
-    { title: "More", icon: <MoreHorizontal />, href: "/more" },
+    { key: "home", title: "Home", icon: <HomeIcon />, href: "/" },
+    { key: "about", title: "About", icon: <User />, href: "/about" },
+    { key: "skills", title: "Skills", icon: <LightbulbIcon />, href: "/skills" },
+    { key: "education", title: "Education", icon: <GraduationCap />, href: "/education" },
+    { key: "work", title: "Work", icon: <Briefcase />, href: "/work" },
+    { key: "projects", title: "Projects", icon: <FolderGit2 />, href: "/projects" },
+    { key: "blog", title: "Blog", icon: <Globe />, href: "/blog" },
+    { key: "contact", title: "Contact", icon: <Mail />, href: "/contact" },
+    { key: "more", title: "More", icon: <MoreHorizontal />, href: "/more" },
   ];
 
   useEffect(() => {
@@ -67,7 +69,11 @@ const Navbar = () => {
         <div className="flex items-center gap-3 bg-transparent rounded-full px-2">
           <Dock className="items-end pb-3 rounded-full">
           {menu.map((item, index) => {
-          const isActive = pathname === item.href;
+          const locale = getLocaleFromPath(pathname || "/");
+          const pageTitle = translations[locale].navbar[item.key as keyof typeof translations[typeof locale]["navbar"]] ?? item.title;
+          const itemHref = buildLocalePath(locale, item.href);
+          const basePath = pathname ? pathname.replace(/^\/en(?=\/|$)/, "") : item.href;
+          const isActive = basePath === item.href;
 
           return (
             <Link href={item.href} key={index}>
@@ -89,6 +95,7 @@ const Navbar = () => {
           </Dock>
           <div className="flex items-center pl-2">
             <ThemeToggle />
+            <LanguageToggle />
           </div>
         </div>
       </div>

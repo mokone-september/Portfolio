@@ -13,7 +13,35 @@ import {
 import { Button } from "./ui/button";
 import { SendEmail } from "./SendEmail";
 
-const ContactForm = () => {
+type ContactFormTranslations = {
+  formTitle: string;
+  formDescription: string;
+  name: string;
+  email: string;
+  message: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  messagePlaceholder: string;
+  submit: string;
+};
+
+const defaultTranslations: ContactFormTranslations = {
+  formTitle: "Send me a mail.",
+  formDescription: "Once submitted, you’ll be redirected to the home page.",
+  name: "Name",
+  email: "Email",
+  message: "Your Message",
+  namePlaceholder: "Enter your name",
+  emailPlaceholder: "Enter your email",
+  messagePlaceholder: "Your message here...",
+  submit: "Submit",
+};
+
+const ContactForm = ({
+  translations = defaultTranslations,
+}: {
+  translations?: ContactFormTranslations;
+}) => {
   return (
     <Card className="w-full max-w-md">
       <form
@@ -23,45 +51,45 @@ const ContactForm = () => {
         }}
       >
         <CardHeader>
-          <CardTitle className="icon_underline">Send me a mail.</CardTitle>
+          <CardTitle className="icon_underline">{translations.formTitle}</CardTitle>
           <CardDescription>
-            Once submitted, you’ll be redirected to the home page.
+            {translations.formDescription}
           </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-4">
           {/* Name */}
           <div className="grid gap-1.5">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">{translations.name}</Label>
             <Input
               id="name"
               type="text"
               name="name"
               required
-              placeholder="Enter your name"
+              placeholder={translations.namePlaceholder}
             />
           </div>
 
           {/* Email */}
           <div className="grid gap-1.5">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{translations.email}</Label>
             <Input
               id="email"
               type="email"
               name="SenderEmail"
               required
-              placeholder="Enter your email"
+              placeholder={translations.emailPlaceholder}
             />
           </div>
 
           {/* Message */}
           <div className="grid gap-1.5">
-            <Label htmlFor="message">Your Message</Label>
+            <Label htmlFor="message">{translations.message}</Label>
             <textarea
               id="message"
               name="message"
               required
-              placeholder="Your message here..."
+              placeholder={translations.messagePlaceholder}
               className="min-h-[100px] w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             ></textarea>
           </div>
@@ -69,7 +97,7 @@ const ContactForm = () => {
 
         <CardFooter>
           <Button type="submit" className="w-full">
-            Submit
+            {translations.submit}
           </Button>
         </CardFooter>
       </form>

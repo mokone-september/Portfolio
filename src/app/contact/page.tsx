@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import { getTranslations } from "@/lib/i18n";
 import FramerWrapper from "@/components/animation/FramerWrapper";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
@@ -29,7 +30,7 @@ const ContactPage = () => {
 
         <div className="h-auto w-full flex justify-center items-center">
           <FramerWrapper y={0} scale={0.8}>
-            <ContactForm />
+            <ContactForm translations={getTranslations("en").contact} />
           </FramerWrapper>
         </div>
       </section>

@@ -11,7 +11,7 @@ export const SendEmail = async (formdata: FormData) => {
   const SenderEmail = formdata.get("SenderEmail")?.toString();
 
   if (!message || !name || !SenderEmail) {
-    return { error: "Missing required fields" };
+    throw new Error("Missing required fields");
   }
 
   await resend.emails.send({
@@ -22,5 +22,5 @@ export const SendEmail = async (formdata: FormData) => {
     text: `sender email: ${SenderEmail}\n\n${message}`,
   });
 
-  return redirect("/");
+  redirect("/");
 };
