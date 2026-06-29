@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpLeft } from "lucide-react";
 import { getAllMdxPosts, getMdxPostBySlug } from "@/lib/mdx";
 import MdxPostContent from "@/components/MdxPostContent";
 
