@@ -10,7 +10,7 @@ const ProjectsPage = () => {
       title: "ToDo-app",
       description: `A comprehensive task management web application built with React and Redux, offering full CRUD operations, note-taking capabilities, and advanced filtering and sorting by status and date.`,
       tags: ["React", "TypeScript", "HTML", "Redux", "Tailwindcss"],
-      link: "to-do-app-sand-eight.vercel.app",
+      link: "https://to-do-app-sand-eight.vercel.app",
       github: "https://github.com/mokone-september/ToDo-app",
     },
     {
