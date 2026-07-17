@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 type Theme = "light" | "dark";
+const THEME_CHANGE_EVENT = "portfolio-theme-change";
+
+let currentTheme: Theme | undefined;
 
 const getInitialTheme = (): Theme => {
   if (typeof window === "undefined") {
@@ -27,21 +30,54 @@ const getInitialTheme = (): Theme => {
     : "light";
 };
 
+const getThemeSnapshot = (): Theme => {
+  currentTheme ??= getInitialTheme();
+  return currentTheme;
+};
+
+const getServerThemeSnapshot = (): Theme => "light";
+
+const subscribeToTheme = (onStoreChange: () => void) => {
+  const handleStorageChange = () => {
+    currentTheme = undefined;
+    onStoreChange();
+  };
+
+  window.addEventListener("storage", handleStorageChange);
+  window.addEventListener(THEME_CHANGE_EVENT, onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", handleStorageChange);
+    window.removeEventListener(THEME_CHANGE_EVENT, onStoreChange);
+  };
+};
+
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const theme = useSyncExternalStore(
+    subscribeToTheme,
+    getThemeSnapshot,
+    getServerThemeSnapshot
+  );
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
-
-    try {
-      window.localStorage.setItem("theme", theme);
-    } catch {
-      // Ignore localStorage errors
-    }
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
+    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+    currentTheme = nextTheme;
+
+    try {
+      window.localStorage.setItem("theme", nextTheme);
+    } catch {
+      // Ignore localStorage errors
+    }
+
+    window.document.documentElement.classList.toggle(
+      "dark",
+      nextTheme === "dark"
+    );
+    window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
   };
 
   return (

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins, Rubik } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
@@ -44,18 +43,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${rubik.variable}`}>
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`(function () {
-            try {
-              var theme = localStorage.getItem('theme');
-              if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-              } else {
-                document.documentElement.classList.remove('dark');
-              }
-            } catch (e) {}
-          })();`}
-        </Script>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10000000] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:ring-2 focus:ring-ring"
