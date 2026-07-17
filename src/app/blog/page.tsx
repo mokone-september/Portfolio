@@ -34,8 +34,6 @@ export default async function BlogPage() {
           <div className="w-full flex items-center justify-between gap-3">
             <Link
               href={`/blog/${post.slug}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ 
                   variant: "default", 

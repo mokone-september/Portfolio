@@ -56,8 +56,8 @@ export function LocalizedHomePage({ locale }: { locale: Locale }) {
 
       <FramerWrapper className="relative w-full max-w-lg self-center lg:w-1/2" y={0} x={100}>
         <Image
-          src="/hero-image.png"
-          alt="Hero illustration"
+          src="/portfolioLogo.png"
+          alt="TK Mokone portfolio illustration"
           width={600}
           height={600}
           className="mx-auto"
@@ -113,7 +113,7 @@ export function LocalizedContactPage({ locale }: { locale: Locale }) {
       <div className="hidden lg:block absolute right-0 bottom-6 translate-x-40 pointer-events-none select-none z-0">
         <Image
           src="/cube-leg.png"
-          alt="Decorative cube"
+          alt=""
           width={520}
           height={520}
           className="opacity-95"
@@ -222,7 +222,7 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
       <div className="hidden lg:block absolute right-0 bottom-6 translate-x-20 pointer-events-none select-none z-0">
-        <Image src="/growth.png" alt="growth illustration" width={300} height={300} className="opacity-95" priority={false} />
+        <Image src="/growth.png" alt="" width={300} height={300} className="opacity-95" priority={false} />
       </div>
       <Badge variant="secondary" className="gap-1.5 py-1">
         <LightbulbIcon className="w-4 h-4" />
@@ -239,9 +239,9 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
         </FramerWrapper>
 
         <FramerWrapper y={100} delay={0.3} className="block w-full">
-          <h1 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
             {t.skills.languages}
-          </h1>
+          </h2>
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             {programmingLanguages.map((item, index) => (
               <div key={index} className="rounded-lg border border-border p-3 text-center">
@@ -253,9 +253,9 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
         </FramerWrapper>
 
         <FramerWrapper y={100} delay={0.32} className="block w-full">
-          <h1 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
             {t.skills.frameworks}
-          </h1>
+          </h2>
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             {frameworks.map((item, index) => (
               <div key={index} className="rounded-lg border border-border p-3 text-center">
@@ -267,9 +267,9 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
         </FramerWrapper>
 
         <FramerWrapper y={100} delay={0.34} className="block w-full">
-          <h1 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
             {t.skills.tools}
-          </h1>
+          </h2>
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             {tools.map((item, index) => (
               <div key={index} className="rounded-lg border border-border p-3 text-center">
@@ -427,7 +427,7 @@ export function LocalizedMorePage({ locale }: { locale: Locale }) {
       <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-28 pointer-events-none select-none z-0">
         <Image
           src="/looking-ahead.png"
-          alt="Looking ahead"
+          alt=""
           width={420}
           height={420}
           className="opacity-95"

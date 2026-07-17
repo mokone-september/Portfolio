@@ -10,11 +10,11 @@ type Props = {
 
 export default function MdxPostContent({ source }: Props) {
   const Component = useMemo(() => {
-    const module = runSync(source, {
+    const compiledModule = runSync(source, {
       ...runtime,
       baseUrl: import.meta.url,
     });
-    return module.default;
+    return compiledModule.default;
   }, [source]);
 
   return <Component />;

@@ -6,9 +6,9 @@ import FramerWrapper from "./animation/FramerWrapper";
 
 const SocialLinks = () => {
   const links = [
-    { name: "Twitter", link: "https://x.com/mokoneseptember", icon: <Twitter /> },
-    { name: "Linkedin", link: "https://www.linkedin.com/in/mokone-september", icon: <Linkedin /> },
-    { name: "Github", link: "https://www.github.com/mokone-september", icon: <Github /> },
+    { name: "Twitter", link: "https://x.com/mokoneseptember", icon: <Twitter aria-hidden="true" /> },
+    { name: "LinkedIn", link: "https://www.linkedin.com/in/mokone-september", icon: <Linkedin aria-hidden="true" /> },
+    { name: "GitHub", link: "https://www.github.com/mokone-september", icon: <Github aria-hidden="true" /> },
   ];
   return (
     <>
@@ -18,8 +18,11 @@ const SocialLinks = () => {
         return ( 
           <FramerWrapper key={indx} delay={timing} y={50}>
 
-          <Link  target="blank"
+          <Link
+            target="_blank"
             href={itm.link}
+            rel="noopener noreferrer"
+            aria-label={`Visit ${itm.name} profile`}
             className={cn(buttonVariants({ variant: "default", size: "icon" }))}
             >{itm.icon}</Link>
             </FramerWrapper>

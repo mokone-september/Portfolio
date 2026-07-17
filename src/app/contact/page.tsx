@@ -13,7 +13,7 @@ const ContactPage = () => {
       <div className="hidden lg:block absolute right-0 bottom-6 translate-x-40 pointer-events-none select-none z-0">
         <Image
           src="/cube-leg.png"
-          alt="Decorative cube"
+          alt=""
           width={520}
           height={520}
           className="opacity-95"

@@ -89,16 +89,17 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
 
             {value.github && (
               <Link
-                href={value.github}
-                target="_blank"
-                rel="noopener noreferrer"
+              href={value.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${value.title} source code on GitHub`}
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "sm" }),
                   "inline-flex items-center gap-2 text-sm"
                 )}
               >
-                <span className="hidden sm:inline">github</span>
-                <Github className="h-4 w-4" />
+                <span className="hidden sm:inline">GitHub</span>
+                <Github aria-hidden="true" className="h-4 w-4" />
               </Link>
             )}
           </div>

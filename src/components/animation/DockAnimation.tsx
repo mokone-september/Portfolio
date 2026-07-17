@@ -45,6 +45,7 @@ type DockLabelProps = {
   className?: string;
   children: React.ReactNode;
   isHovered?: MotionValue<number>;
+  "aria-hidden"?: React.AriaAttributes["aria-hidden"];
 };
 
 type DockIconProps = {
@@ -121,8 +122,6 @@ export function Dock({
           className,
         )}
         style={{ height: panelHeight }}
-        role="toolbar"
-        aria-label="Application dock"
       >
         <DockProvider
           value={{
@@ -172,8 +171,6 @@ export function DockItem({ children, className }: DockItemProps) {
         'relative inline-flex items-center justify-center',
         className,
       )}
-      tabIndex={0}
-      role="button"
     >
       {Children.map(children, (child) =>
         cloneElement(child as React.ReactElement, { width, isHovered } as any),
@@ -183,7 +180,12 @@ export function DockItem({ children, className }: DockItemProps) {
 }
 
 /* LABEL */
-export function DockLabel({ children, className, isHovered }: DockLabelProps) {
+export function DockLabel({
+  children,
+  className,
+  isHovered,
+  "aria-hidden": ariaHidden,
+}: DockLabelProps) {
   const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -206,7 +208,7 @@ export function DockLabel({ children, className, isHovered }: DockLabelProps) {
             className,
           )}
           style={{ x: '-50%' }}
-          role="tooltip"
+          aria-hidden={ariaHidden}
         >
           {children}
         </motion.div>

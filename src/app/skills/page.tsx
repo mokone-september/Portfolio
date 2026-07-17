@@ -93,7 +93,7 @@ const SkillsPage = () => {
       <div className="hidden lg:block absolute right-0 bottom-6 translate-x-20 pointer-events-none select-none z-0">
         <Image
           src="/growth.png"
-          alt="growth illustration"
+          alt=""
           width={300}
           height={300}
           className="opacity-95"
@@ -118,9 +118,9 @@ const SkillsPage = () => {
 
         {/* Programming Languages */}
         <FramerWrapper y={100} delay={0.3} className="block w-full">
-          <h1 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
             Programming Languages
-          </h1>
+          </h2>
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             <SkillsFooter items={programmingLanguages} />
           </div>
@@ -128,9 +128,9 @@ const SkillsPage = () => {
 
         {/* Frameworks & Libraries */}
         <FramerWrapper y={100} delay={0.32} className="block w-full">
-          <h1 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
             Frameworks & Libraries
-          </h1>
+          </h2>
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             <SkillsFooter items={frameworks} />
           </div>
@@ -138,9 +138,9 @@ const SkillsPage = () => {
 
         {/* Tools & Technologies */}
         <FramerWrapper y={100} delay={0.34} className="block w-full">
-          <h1 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
             Tools & Technologies
-          </h1>
+          </h2>
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             <SkillsFooter items={tools} />
           </div>

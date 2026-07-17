@@ -1,45 +1,56 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '../ui/button';
-import { Download } from 'lucide-react';
+import { useState } from "react";
+import { Download } from "lucide-react";
 
-const HackerBtn = ({ label, onClick }: { label: string, onClick: () => void }) => {
-  const [displayText, setDisplayText] = useState(label);
-  const charset = "abcdefghijklmnopqrstuvwxyz";
+import { Button } from "../ui/button";
 
-  const randomChars = (length: number) => {
-    return Array.from(
-      { length },
-      () => charset[Math.floor(Math.random() * charset.length)]
-    ).join("");
-  };
+type HackerBtnProps = {
+  label: string;
+  onClick: () => void;
+};
 
-  const scramble = async (input: string) => {
+const CHARSET = "abcdefghijklmnopqrstuvwxyz";
+
+const randomChars = (length: number) =>
+  Array.from(
+    { length },
+    () => CHARSET[Math.floor(Math.random() * CHARSET.length)]
+  ).join("");
+
+const HackerBtn = ({ label, onClick }: HackerBtnProps) => {
+  const [displayText, setDisplayText] = useState<string | null>(null);
+
+  const scramble = async () => {
     let prefix = "";
-    for (let index = 0; index < input.length; index++) {
+
+    for (let i = 0; i < label.length; i++) {
       await new Promise((resolve) => setTimeout(resolve, 50));
-      prefix += input.charAt(index);
-      setDisplayText(prefix + randomChars(input.length - prefix.length));
+
+      prefix += label[i];
+      setDisplayText(prefix + randomChars(label.length - prefix.length));
     }
+
+    setDisplayText(null);
   };
 
   const startScrambling = () => {
-    scramble(label);
-    setTimeout(() => console.log("Submitted"), label.length * 50);
+    void scramble();
   };
 
-  useEffect(() => {
-    setDisplayText(label);
-  }, [label]);
-
   return (
-    <Button size={'lg'} className='text-base px-5 py-6' onMouseEnter={startScrambling} onClick={onClick}>
-      <Download className="mx-2" />
-      {displayText}
+    <Button
+      size="lg"
+      className="px-5 py-6 text-base"
+      onMouseEnter={startScrambling}
+      onFocus={startScrambling}
+      onClick={onClick}
+      aria-label={label}
+    >
+      <Download aria-hidden="true" className="mx-2 h-5 w-5" />
+      <span aria-hidden="true">{displayText ?? label}</span>
     </Button>
   );
 };
 
 export default HackerBtn;
-

@@ -30,7 +30,7 @@ const MorePage = () => {
       <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-28 pointer-events-none select-none z-0">
         <Image
           src="/looking-ahead.png"
-          alt="Looking ahead"
+          alt=""
           width={420}
           height={420}
           className="opacity-95"
@@ -69,6 +69,7 @@ const MorePage = () => {
                 <Link
                   href={value.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "default", size: "lg" }),
                     "w-full gap-3"

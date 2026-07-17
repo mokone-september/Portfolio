@@ -10,7 +10,7 @@ const HeroImage = ()  => {
           <div className="relative w-full max-w-md mx-auto aspect-square sm:aspect-[4/3]">
             <Image
               src={logo}
-              alt="logo"
+              alt="TK Mokone portfolio illustration"
               loading="eager"
               priority
               fill
