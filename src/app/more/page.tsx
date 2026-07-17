@@ -13,6 +13,12 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import FramerWrapper from "@/components/animation/FramerWrapper";
 import Image from "next/image";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.more,
+  path: "/more",
+});
 
 const MorePage = () => {
   const moreLinks = [

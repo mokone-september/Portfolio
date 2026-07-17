@@ -4,6 +4,12 @@ import { Badge } from "@/components/ui/badge";
 import { LightbulbIcon } from "lucide-react";
 import FramerWrapper from "@/components/animation/FramerWrapper";
 import Image from "next/image";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.skills,
+  path: "/skills",
+});
 
 const SkillsPage = () => {
   const programmingLanguages = [

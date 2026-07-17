@@ -3,6 +3,12 @@ import Heading from "@/components/Heading";
 import ProjectCards from "@/components/ProjectsCard";
 import { Badge } from "@/components/ui/badge";
 import { Layers } from "lucide-react";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.projects,
+  path: "/projects",
+});
 
 const ProjectsPage = () => {
   const projects = [

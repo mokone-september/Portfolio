@@ -5,6 +5,12 @@ import FramerWrapper from "@/components/animation/FramerWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.blog,
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const posts = getAllMdxPosts();

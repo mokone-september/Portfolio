@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { ArrowUpLeft } from "lucide-react";
 import { getAllMdxPosts, getMdxPostBySlug } from "@/lib/mdx";
 import MdxPostContent from "@/components/MdxPostContent";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
 
 type Props = {
   // `params` can be a Promise in the app router; allow awaiting it.
@@ -12,6 +14,27 @@ type Props = {
 export async function generateStaticParams() {
   const posts = getAllMdxPosts();
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getAllMdxPosts().find((item) => item.slug === slug);
+
+  if (!post) {
+    return createPageMetadata({
+      ...pageSeo.en.blog,
+      path: `/blog/${slug}`,
+    });
+  }
+
+  return createPageMetadata({
+    title: `${post.title} | TK Mokone`,
+    description:
+      post.excerpt || `Read ${post.title} by Thabiso Kenneth Mokone.`,
+    path: `/blog/${post.slug}`,
+    type: "article",
+    publishedTime: post.date,
+  });
 }
 
 export default async function PostPage({ params }: Props) {

@@ -3,6 +3,12 @@ import FramerWrapper from "@/components/animation/FramerWrapper";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRightSquareIcon, Heart, User2 } from "lucide-react";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.about,
+  path: "/about",
+});
 
 const Page = () => {
   const items: { hobby: string }[] = [

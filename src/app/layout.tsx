@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
-import { siteConfig } from "./page";
+import { siteConfig } from "@/lib/site";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,57 +19,18 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-ten-vert-28.vercel.app"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
-    template: `%s - Software Engineer`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-
-  keywords: [
-    "TK Mokone",
-    "Thabiso",
-    "Kenneth",
-    "Tk",
-    "TK",
-    "portfolio",
-    "web developer",
-    "web",
-    "developer",
-    "programmer",
-    "TK MOKONE",
-    "website",
-    "@mokone-september",
-    "mokone-september developer",
-  ],
-
   authors: [
     {
-      name: "Thabiso Kenneth Mokone",
-      url: "",
+      name: siteConfig.creator,
     },
   ],
-
-  creator: "Taqui imam",
-
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/og-image.png`],
-    siteName: siteConfig.name,
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/og-image.png`],
-    creator: "Thabiso Kenneth Mokone",
-  },
-
+  creator: siteConfig.creator,
   icons: {
     icon: "/favicon.ico",
   },

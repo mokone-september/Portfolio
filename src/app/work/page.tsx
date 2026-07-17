@@ -2,6 +2,12 @@ import FramerWrapper from "@/components/animation/FramerWrapper";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase } from "lucide-react";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.work,
+  path: "/work",
+});
 
 const WorkPage = () => {
   return (

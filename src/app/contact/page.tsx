@@ -5,6 +5,12 @@ import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
 import { Phone } from "lucide-react";
 import Image from "next/image";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.contact,
+  path: "/contact",
+});
 
 const ContactPage = () => {
   return (

@@ -4,13 +4,12 @@ import HeroImage from "@/components/HeroImage";
 import GithubBtn from "@/components/animation/GithubBtn";
 import DownLoadResumeBtn from "@/components/DownLoadResumeBtn";
 import FramerWrapper from "@/components/animation/FramerWrapper";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
 
-export const siteConfig = {
-  name: "TK Mokone",
-  description: "I am a Passionate Software Developer",
-  ogImage: "https://portfolio-ten-vert-28.vercel.app/og-image.png",
-  url: "https://portfolio-ten-vert-28.vercel.app",
-};
+export const metadata = createPageMetadata({
+  ...pageSeo.en.home,
+  path: "/",
+});
 
 export default function Home() {
   return (

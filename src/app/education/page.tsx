@@ -2,6 +2,12 @@ import FramerWrapper from "@/components/animation/FramerWrapper";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap } from "lucide-react";
+import { createPageMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  ...pageSeo.en.education,
+  path: "/education",
+});
 
 const educationPage = () => {
   return (
