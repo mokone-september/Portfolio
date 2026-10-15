@@ -1,112 +1,114 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import FramerWrapper from "./animation/FramerWrapper";
+import FramerWrapper from "@/components/animation/FramerWrapper";
 import { ArrowUpRight, Github } from "lucide-react";
 
-interface ProjectCardProps {
-  value: {
-    title: string;
-    description: string;
-    tags: string[];
-    link: string;
-    github?: string;
-  };
-  num: number;
-}
+const tagStyles: Record<string, string> = {
+  "Next.js": "bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100",
+  Nextjs: "bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100",
+  React: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-200",
+  "Vue.js": "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200",
+  Vue: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200",
+  TypeScript: "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200",
+  JavaScript: "bg-yellow-100 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-200",
+  "Tailwind CSS": "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-200",
+  Tailwindcss: "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-200",
+  Redux: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-200",
+  Pinia: "bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200",
+  Nuxt: "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-200",
+  Vite: "bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-200",
+  tRPC: "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200",
+  Prisma: "bg-stone-100 text-stone-800 dark:bg-stone-800 dark:text-stone-200",
+  PostgreSQL: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-200",
+  "Better Auth": "bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100",
+  Vitest: "bg-lime-100 text-lime-800 dark:bg-lime-950 dark:text-lime-200",
+  Strapi: "bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-200",
+  API: "bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200",
+  "REST API": "bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200",
+  "Dark Mode": "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-200",
+  "Dark mode": "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-200",
+  HTML: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-200",
+  "Node.js": "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-200",
+};
 
-const ProjectCards: React.FC<ProjectCardProps> = ({ value, num }) => {
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  github?: string;
+};
+
+type ProjectCardsProps = {
+  value: Project;
+  num?: number;
+};
+
+export default function ProjectCards({ value }: ProjectCardsProps) {
   return (
-    <FramerWrapper 
-      className="max-w-[32%] max-lg:max-w-full" 
-      y={0} 
-      scale={0.8} 
-      delay={num/4} 
-      duration={0.15}
-    >
-      <Card className="w-full h-full flex flex-col hover:shadow-lg transition-all duration-300 border-2">
-        <CardHeader className="pb-2">
-          <CardTitle className="text-xl font-bold text-primary">{value.title}</CardTitle>
+    <FramerWrapper>
+      <Card className="flex h-full flex-col overflow-hidden">
+        <CardHeader>
+          <CardTitle>{value.title}</CardTitle>
+          <CardDescription>{value.description}</CardDescription>
         </CardHeader>
-        
-        <CardContent className="flex-grow flex flex-col gap-4">
-          <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
-          
-          <div className="flex flex-wrap gap-2">
-            {value.tags.map((tag: string, index: number) => {
-              const tagStyles = {
-                'Nextjs': 'bg-teal-100 text-teal-800',
-                'Redux': 'bg-yellow-100 text-yellow-800',
-                'Pinia': 'bg-blue-100 text-blue-800',
-                'TypeScript': 'bg-red-100 text-red-800',
-                'Tailwindcss': 'bg-orange-100 text-orange-800',
-                'Nuxt': 'bg-purple-100 text-purple-800',
-                'Vue': 'bg-emerald-100 text-emerald-800',
-                'React': 'bg-pink-100 text-pink-800',
-                'API': 'bg-indigo-100 text-indigo-800',
-                'Library': 'bg-pink-100 text-pink-800',
-                'Dark mode': 'bg-cyan-100 text-cyan-800',
-                'Vite': 'bg-green-100 text-purple-800',
-                'HTML': 'bg-violet-100 text-violet-800'
-              }[tag] || 'bg-gray-100 text-gray-800';
 
-              return (
-                <span 
-                  key={index}
-                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${tagStyles}`}
-                >
-                  {tag}
-                </span>
-              );
-            })}
+        <CardContent className="flex-1">
+          <div className="flex flex-wrap gap-2">
+            {value.tags.map((tag) => (
+              <span
+                key={tag}
+                className={cn(
+                  "rounded-md px-2 py-1 text-xs font-medium",
+                  tagStyles[tag] ??
+                    "bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100",
+                )}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </CardContent>
 
-        <CardFooter className="pt-2">
-          <div className="w-full flex items-center justify-between gap-3">
+        <CardFooter className="flex flex-wrap gap-2">
+          {value.link ? (
             <Link
               href={value.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ 
-                  variant: "default", 
-                  size: "sm" 
-                }),
-                "w-fit transition-all hover:translate-y-[-2px] hover:shadow-md group"
-              )}
+              className={cn(buttonVariants({ variant: "default" }))}
             >
-              Visit Project 
-              <ArrowUpRight className="h-4 w-4 ml-1 hidden group-hover:block -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+              View Project
+              <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
+          ) : (
+            <span className="text-sm text-muted-foreground">
+              Demo coming soon
+            </span>
+          )}
 
-            {value.github && (
-              <Link
+          {value.github && (
+            <Link
               href={value.github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View ${value.title} source code on GitHub`}
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "sm" }),
-                  "inline-flex items-center gap-2 text-sm"
-                )}
-              >
-                <span className="hidden sm:inline">GitHub</span>
-                <Github aria-hidden="true" className="h-4 w-4" />
-              </Link>
-            )}
-          </div>
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
+            </Link>
+          )}
         </CardFooter>
       </Card>
     </FramerWrapper>
   );
-};
-
-export default ProjectCards;
+}

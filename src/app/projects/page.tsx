@@ -10,84 +10,61 @@ export const metadata = createPageMetadata({
   path: "/projects",
 });
 
-const ProjectsPage = () => {
-  const projects = [
-    {
-      title: "ToDo-app",
-      description: `A comprehensive task management web application built with React and Redux, offering full CRUD operations, note-taking capabilities, and advanced filtering and sorting by status and date.`,
-      tags: ["React", "TypeScript", "HTML", "Redux", "Tailwindcss"],
-      link: "https://to-do-app-sand-eight.vercel.app",
-      github: "https://github.com/mokone-september/ToDo-app",
-    },
-    {
-      title: "Weather App",
-      description:
-        "A weather app that displays the current weather for any city, with features to search for cities and view detailed weather information.",
-      tags: ["Vite", "TypeScript", "Dark mode", "React", "API"],
-      link: "https://atmos-weather-app.vercel.app/",
-      github: "https://github.com/mokone-september/atmos-weather-app",
-    },
-    {
-      title: "Quiz App",
-      description:
-        "A quiz app that allows users to take quizzes on various topics, with features to create, update, and delete quizzes.",
-      tags: ["Vue", "TypeScript", "Nuxt", "Pinia", "API"],
-      link: "https://quiz-nuxt-smoky.vercel.app/",
-      github: "https://github.com/mokone-september/quiz-nuxt",
-    },
-    {
-      title: "Snake Game",
-      description:
-        "A classic snake game built with React and Redux, featuring a clean UI and smooth gameplay.",
-      tags: ["React", "TypeScript", "Redux"],
-      link: "https://snake-game-pi-rose.vercel.app/",
-      github: "https://github.com/mokone-september/snake-game",
-    },
-    {
-      title: "E-commerce Store",
-      description:
-        "A fully responsive e-commerce store dedicated to custom mechanical keyboards. Built with Vue.js 3, TypeScript, and TailwindCSS, showcasing routing, state management, SEO, and testing.",
-      tags: ["Vue", "TypeScript", "Vite", "Pinia", "Tailwindcss"],
-      link: "https://e-commerce-store-hazel-xi.vercel.app/",
-      github: "https://github.com/mokone-september/e-commerce-store",
-    },
-    {
-      title: "Recipe App",
-      description:
-        "A culinary explorer powered by the MealDB API, allowing users to browse recipes with detailed steps, ingredients, and global cuisines.",
-      tags: ["Vite", "TypeScript", "React", "API"],
-      link: "https://recipe-app-liard-seven.vercel.app/",
-      github: "https://github.com/mokone-september/recipe-app",
-    },
-  ];
+const projects = [
+  {
+    title: "Pokedex Pro",
+    description:
+      "A modern Pokémon discovery application featuring Pokémon search, detailed information, type filtering, favorites, authentication, and a responsive interface. Built with Next.js, TypeScript, Tailwind CSS, tRPC, Prisma, and PostgreSQL.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "tRPC",
+      "Prisma",
+      "PostgreSQL",
+      "Better Auth",
+      "Vitest",
+    ],
+    link: "",
+    github: "https://github.com/mokone-september/pokedex-pro",
+  },
+];
 
+export default function ProjectsPage() {
   return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <Badge variant="secondary" className="gap-1.5 py-1">
-        <Layers className="h-4 w-4" />
-        Projects
-      </Badge>
+    <main className="container mx-auto min-h-screen px-4 py-12 sm:px-6 lg:px-8">
+      <FramerWrapper>
+        <div className="mx-auto max-w-3xl text-center">
+          <Badge
+            variant="secondary"
+            className="mb-4 inline-flex items-center gap-2"
+          >
+            <Layers className="h-4 w-4" />
+            My Work
+          </Badge>
 
-      <div className="flex flex-col gap-3">
-        <Heading>My Projects</Heading>
+          <Heading>Projects</Heading>
 
-        <FramerWrapper y={0} x={200}>
-          <p className="font-poppins text-lg w-full text-primary max-sm:text-base">
-            I love building projects. Here you all find a curated collection of my
-            creative and technical work—each project reflects problem-solving,
-            innovation, and continuous learning. Explore and enjoy the journey behind
-            each creation.
+          <p className="mt-4 text-muted-foreground">
+            I build practical web applications with modern technologies,
+            focusing on usability, accessibility, maintainability, and
+            reliable software.
           </p>
-        </FramerWrapper>
-      </div>
+        </div>
+      </FramerWrapper>
 
-      <div className="w-full flex flex-row flex-wrap gap-3 max-lg:flex-col">
-        {projects.map((val, index) => (
-          <ProjectCards key={index} value={val} num={index} />
+      <section
+        aria-label="Projects"
+        className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+      >
+        {projects.map((project, index) => (
+          <ProjectCards
+            key={project.title}
+            value={project}
+            num={index}
+          />
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
-};
-
-export default ProjectsPage;
+}
