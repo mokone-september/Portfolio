@@ -1,27 +1,40 @@
-import React from 'react'
+import React from "react";
+
+const roles = [
+  "Frontend Developer",
+  "Full-Stack Developer",
+  "React Developer",
+];
 
 function TextRotator() {
   return (
-   
-    <div
-    className="py-4  rounded-md flex flex-col justify-center items-center overflow-hidden"
-  >
-    <div className="font-poppins text-base sm:text-2xl [text-wrap:balance] text-[#4f5052] font-semibold">
-    I am a Software Developer &
-      <span
-        className="inline-flex ml-2 flex-col h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] sm:h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] overflow-hidden"
-      >
-        <ul
-          className="block text-left font-rubik text-lg sm:text-3xl leading-tight [&_li]:block animate-text-slide"
+    <div className="w-full overflow-hidden py-4">
+      <p className="flex flex-wrap items-center justify-center gap-x-2 font-poppins text-base font-semibold text-[#4f5052] dark:text-gray-300 sm:text-2xl lg:justify-start">
+        <span>I am a</span>
+        <span
+          className="relative inline-flex h-[1.5em] min-w-[12rem] overflow-hidden text-left font-rubik text-lg text-[#2f7df4] sm:text-3xl"
+          aria-label={roles.join(", ")}
         >
-          <li className="text-[#2f7df4]">Gamer</li>
-          <li className="text-[#2f7df4]">Gardner</li>
-
-        </ul>
-      </span>
+          <span className="animate-role-slide flex flex-col">
+            {roles.map((role) => (
+              <span
+                key={role}
+                className="flex h-[1.5em] items-center whitespace-nowrap"
+              >
+                {role}
+              </span>
+            ))}
+            <span
+              aria-hidden="true"
+              className="flex h-[1.5em] items-center whitespace-nowrap"
+            >
+              {roles[0]}
+            </span>
+          </span>
+        </span>
+      </p>
     </div>
-  </div>
-  )
+  );
 }
 
-export default TextRotator
+export default TextRotator;

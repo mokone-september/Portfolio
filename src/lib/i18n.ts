@@ -1,3 +1,4 @@
+
 export const locales = ["en", "es"] as const;
 export type Locale = (typeof locales)[number];
 
@@ -19,11 +20,16 @@ export const translations = {
       more: "More",
     },
     home: {
-      intro: "My name is",
+      intro: "Hi, my name is",
       heroTitleLine1: "Thabiso Kenneth",
       heroTitleLine2: "Mokone.",
-      summary: "I am a Passionate Software Developer",
-      rotator: ["Gamer", "Gardener"],
+      summary: "I'm a Software Developer focused on",
+      rotator: [
+        "Frontend Development",
+        "Full-Stack Development",
+        "React & TypeScript",
+        "Building Web Applications",
+      ],
     },
     about: {
       badge: "About me",
@@ -101,11 +107,16 @@ export const translations = {
       more: "Más",
     },
     home: {
-      intro: "Mi nombre es",
+      intro: "Hola, me llamo",
       heroTitleLine1: "Thabiso Kenneth",
       heroTitleLine2: "Mokone.",
-      summary: "Soy un Desarrollador de Software Apasionado",
-      rotator: ["Jugador", "Jardinero"],
+      summary: "Soy desarrollador de software especializado en",
+      rotator: [
+        "Desarrollo frontend",
+        "Desarrollo full-stack",
+        "React y TypeScript",
+        "Aplicaciones web",
+      ],
     },
     about: {
       badge: "Sobre mí",

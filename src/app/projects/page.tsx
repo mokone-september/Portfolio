@@ -12,17 +12,33 @@ export const metadata = createPageMetadata({
 
 const projects = [
   {
+    title: "AI Whiteboard",
+    description:
+      "An interactive whiteboard application with freehand drawing, sticky notes, colour customization, object selection, undo and redo, local storage persistence, and PNG export. Built with React, TypeScript, Vite, and Node.js.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "Vitest",
+      "CSS",
+      "REST API",
+    ],
+    link: "https://ai-whiteboard-pied.vercel.app/",
+    github: "https://github.com/mokone-september/ai-whiteboard",
+  },
+  {
     title: "Pokedex Pro",
     description:
-      "A modern Pokémon discovery application featuring Pokémon search, detailed information, type filtering, favorites, authentication, and a responsive interface. Built with Next.js, TypeScript, Tailwind CSS, tRPC, Prisma, and PostgreSQL.",
+      "A responsive Pokémon discovery application featuring Pokémon search, detailed stats, type information, filtering, sorting, persistent favourites, and recently viewed Pokémon. Includes dark mode, accessible navigation, and API caching. Built with Next.js, TypeScript, Chakra UI, TanStack Query, Legend-State, and PokéAPI.",
     tags: [
       "Next.js",
       "TypeScript",
+      "Chakra UI",
       "Tailwind CSS",
-      "tRPC",
-      "Prisma",
-      "PostgreSQL",
-      "Better Auth",
+      "TanStack Query",
+      "Legend-State",
+      "PokéAPI",
       "Vitest",
     ],
     link: "",
@@ -46,16 +62,16 @@ export default function ProjectsPage() {
           <Heading>Projects</Heading>
 
           <p className="mt-4 text-muted-foreground">
-            I build practical web applications with modern technologies,
-            focusing on usability, accessibility, maintainability, and
-            reliable software.
+            A selection of projects where I apply software engineering
+            principles to build practical, responsive, and maintainable
+            applications.
           </p>
         </div>
       </FramerWrapper>
 
       <section
         aria-label="Projects"
-        className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2"
       >
         {projects.map((project, index) => (
           <ProjectCards

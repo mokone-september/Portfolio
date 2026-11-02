@@ -38,6 +38,7 @@ const tagStyles: Record<string, string> = {
   "Dark mode": "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-200",
   HTML: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-200",
   "Node.js": "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-200",
+  CSS: "bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-200",
 };
 
 type Project = {
@@ -53,22 +54,46 @@ type ProjectCardsProps = {
   num?: number;
 };
 
-export default function ProjectCards({ value }: ProjectCardsProps) {
+export default function ProjectCards({
+  value,
+  num = 0,
+}: ProjectCardsProps) {
   return (
     <FramerWrapper>
-      <Card className="flex h-full flex-col overflow-hidden">
-        <CardHeader>
-          <CardTitle>{value.title}</CardTitle>
-          <CardDescription>{value.description}</CardDescription>
+      <Card className="group flex h-full min-h-[340px] flex-col overflow-hidden border-border/70 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+        <CardHeader className="space-y-4">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Project {String(num + 1).padStart(2, "0")}
+            </span>
+
+            <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+              {value.link ? "Live project" : "Source available"}
+            </span>
+          </div>
+
+          <div className="space-y-2">
+            <CardTitle className="text-xl transition-colors group-hover:text-primary sm:text-2xl">
+              {value.title}
+            </CardTitle>
+
+            <CardDescription className="text-sm leading-7 text-muted-foreground">
+              {value.description}
+            </CardDescription>
+          </div>
         </CardHeader>
 
         <CardContent className="flex-1">
+          <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Technologies
+          </div>
+
           <div className="flex flex-wrap gap-2">
             {value.tags.map((tag) => (
               <span
                 key={tag}
                 className={cn(
-                  "rounded-md px-2 py-1 text-xs font-medium",
+                  "rounded-md px-2.5 py-1 text-xs font-medium",
                   tagStyles[tag] ??
                     "bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100",
                 )}
@@ -79,21 +104,21 @@ export default function ProjectCards({ value }: ProjectCardsProps) {
           </div>
         </CardContent>
 
-        <CardFooter className="flex flex-wrap gap-2">
-          {value.link ? (
+        <CardFooter className="mt-auto flex flex-wrap gap-3 border-t border-border/60 pt-5">
+          {value.link && (
             <Link
               href={value.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant: "default" }))}
+              aria-label={`Open ${value.title} live demo in a new tab`}
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "flex-1 sm:flex-none",
+              )}
             >
-              View Project
+              Live Demo
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
-          ) : (
-            <span className="text-sm text-muted-foreground">
-              Demo coming soon
-            </span>
           )}
 
           {value.github && (
@@ -101,10 +126,14 @@ export default function ProjectCards({ value }: ProjectCardsProps) {
               href={value.github}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant: "outline" }))}
+              aria-label={`View ${value.title} source code on GitHub`}
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "flex-1 sm:flex-none",
+              )}
             >
               <Github className="mr-2 h-4 w-4" />
-              GitHub
+              View Source
             </Link>
           )}
         </CardFooter>
