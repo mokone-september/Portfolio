@@ -94,60 +94,72 @@ const SkillsPage = () => {
   ];
 
   return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      {/* Right-side reflecting image (hidden on small screens). Positioned near bottom-right and placed behind content. */}
-      <div className="hidden lg:block absolute right-0 bottom-6 translate-x-20 pointer-events-none select-none z-0">
+    <div className="relative flex h-full w-full flex-col items-start gap-5 overflow-hidden">
+      {/* Growth illustration */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-4 right-4 z-0 hidden select-none lg:block"
+      >
         <Image
           src="/growth.png"
           alt=""
-          width={300}
-          height={300}
-          className="opacity-95"
+          width={230}
+          height={230}
+          className="h-auto w-[230px] object-contain opacity-90"
           priority={false}
         />
       </div>
+
       <Badge variant="secondary" className="gap-1.5 py-1">
-        <LightbulbIcon className="w-4 h-4" />
+        <LightbulbIcon className="h-4 w-4" />
         My Skills
       </Badge>
 
-      <div className="flex flex-col gap-3 relative z-10">
-        <Heading>My Technical Experience & Skills</Heading>
+      <div className="relative z-10 flex w-full flex-col gap-6">
+        {/* Skills Introduction */}
+        <div className="flex flex-col gap-3">
+          <Heading>My Technical Skills & Expertise</Heading>
 
-        <FramerWrapper y={0} x={200}>
-          <p className="font-poppins text-xl w-full text-primary max-sm:text-lg">
-            I have strong experience with HTML5, CSS3, JavaScript, TypeScript, and React,
-            including responsive design principles. I focus on building modern web
-            applications using JavaScript, TypeScript, React, Next.js, and Node.js.
-          </p>
-        </FramerWrapper>
+          <FramerWrapper y={0} x={200}>
+            <p className="w-full font-poppins text-xl text-primary max-sm:text-lg">
+              I am a Software Developer with 3 years of experience building
+              responsive, user-friendly web applications. My core strengths
+              include React, Next.js, TypeScript, JavaScript, and Tailwind CSS.
+              I enjoy creating clean, maintainable solutions and continuously
+              expanding my skills across frontend and backend development.
+            </p>
+          </FramerWrapper>
+        </div>
 
         {/* Programming Languages */}
         <FramerWrapper y={100} delay={0.3} className="block w-full">
-          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="relative mb-4 font-poppins text-2xl font-semibold text-primary max-sm:text-xl">
             Programming Languages
           </h2>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
+
+          <div className="grid w-full grid-cols-7 gap-4 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2">
             <SkillsFooter items={programmingLanguages} />
           </div>
         </FramerWrapper>
 
         {/* Frameworks & Libraries */}
         <FramerWrapper y={100} delay={0.32} className="block w-full">
-          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="relative mb-4 font-poppins text-2xl font-semibold text-primary max-sm:text-xl">
             Frameworks & Libraries
           </h2>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
+
+          <div className="grid w-full grid-cols-7 gap-4 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2">
             <SkillsFooter items={frameworks} />
           </div>
         </FramerWrapper>
 
         {/* Tools & Technologies */}
         <FramerWrapper y={100} delay={0.34} className="block w-full">
-          <h2 className="text-2xl font-poppins text-primary font-semibold relative max-sm:text-xl mb-4">
+          <h2 className="relative mb-4 font-poppins text-2xl font-semibold text-primary max-sm:text-xl">
             Tools & Technologies
           </h2>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
+
+          <div className="grid w-full grid-cols-7 gap-4 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2">
             <SkillsFooter items={tools} />
           </div>
         </FramerWrapper>
