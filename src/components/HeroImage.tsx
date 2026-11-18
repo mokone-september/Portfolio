@@ -1,4 +1,3 @@
-import logo from "../../public/portfolioLogo.png";
 import Image from "next/image"
 
 const HeroImage = ()  => {
@@ -9,7 +8,7 @@ const HeroImage = ()  => {
         <>
           <div className="relative w-full max-w-md mx-auto aspect-square sm:aspect-[4/3]">
             <Image
-              src={logo}
+              src="/portfolioLogo.png"
               alt="TK Mokone portfolio illustration"
               loading="eager"
               priority

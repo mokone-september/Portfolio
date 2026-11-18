@@ -1,3 +1,4 @@
+
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllMdxPosts, getMdxPostBySlug } from "@/lib/mdx";
@@ -56,8 +57,12 @@ export async function generateMetadata({
   return createPageMetadata({ ...seo, path, locale });
 }
 
-export default async function LocalizedRoute({ params }: { params: Params }) {
-  const { lang, slug } = params;
+export default async function LocalizedRoute({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { lang, slug } = await params;
   if (!isLocale(lang)) return notFound();
 
   const pagePath = slug ?? [];

@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
@@ -39,6 +40,17 @@ const tagStyles: Record<string, string> = {
   HTML: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-200",
   "Node.js": "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-200",
   CSS: "bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-200",
+  Bash: "bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200",
+  Python: "bg-yellow-100 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-200",
+  Linux: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-200",
+  "System Administration": "bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200",
+  Security: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200",
+  Rust: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-200",
+  Serde: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200",
+  Clap: "bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200",
+  CLI: "bg-stone-100 text-stone-800 dark:bg-stone-800 dark:text-stone-200",
+  JSON: "bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-200",
+  Testing: "bg-lime-100 text-lime-800 dark:bg-lime-950 dark:text-lime-200",
 };
 
 type Project = {

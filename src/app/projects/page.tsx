@@ -1,3 +1,4 @@
+
 import FramerWrapper from "@/components/animation/FramerWrapper";
 import Heading from "@/components/Heading";
 import ProjectCards from "@/components/ProjectsCard";
@@ -12,25 +13,43 @@ export const metadata = createPageMetadata({
 
 const projects = [
   {
+    title: "Ubuntu Security Toolkit",
+    description:
+      "A practical Ubuntu security monitoring toolkit built with Bash and Python. Includes system security checks, authentication event monitoring, failed-login detection, and automated tests for authentication event detection.",
+    tags: [
+      "Bash",
+      "Python",
+      "Linux",
+      "System Administration",
+      "Security",
+      "Testing",
+    ],
+    link: "",
+    github:
+      "https://github.com/mokone-september/ubuntu-security-toolkit",
+  },
+  {
     title: "AI Whiteboard",
     description:
-      "An interactive whiteboard application with freehand drawing, sticky notes, colour customization, object selection, undo and redo, local storage persistence, and PNG export. Built with React, TypeScript, Vite, and Node.js.",
-    tags: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Node.js",
-      "Vitest",
-      "CSS",
-      "REST API",
-    ],
+      "An interactive whiteboard application featuring freehand drawing, sticky note creation and editing, object selection, colour customization, undo and redo, local storage persistence, and PNG export.",
+    tags: ["React", "TypeScript", "Vite", "CSS", "Vitest"],
     link: "https://ai-whiteboard-pied.vercel.app/",
-    github: "https://github.com/mokone-september/ai-whiteboard",
+    github:
+      "https://github.com/mokone-september/ai-whiteboard",
+  },
+  {
+    title: "Rust CLI Task Manager",
+    description:
+      "A command-line task management application supporting task creation, listing, completion, and deletion. Built to explore Rust structs, enums, pattern matching, CLI argument parsing, and JSON-based persistence.",
+    tags: ["Rust", "Serde", "Clap", "CLI", "JSON"],
+    link: "",
+    github:
+      "https://github.com/mokone-september/rust-cli-task-manager",
   },
   {
     title: "Pokedex Pro",
     description:
-      "A responsive Pokémon discovery application featuring Pokémon search, detailed stats, type information, filtering, sorting, persistent favourites, and recently viewed Pokémon. Includes dark mode, accessible navigation, and API caching. Built with Next.js, TypeScript, Chakra UI, TanStack Query, Legend-State, and PokéAPI.",
+      "A responsive Pokémon discovery application featuring Pokémon search, detailed stats, type information, filtering, sorting, persistent favourites, and recently viewed Pokémon. Includes dark mode, accessible navigation, and API caching.",
     tags: [
       "Next.js",
       "TypeScript",
@@ -42,7 +61,8 @@ const projects = [
       "Vitest",
     ],
     link: "",
-    github: "https://github.com/mokone-september/pokedex-pro",
+    github:
+      "https://github.com/mokone-september/pokedex-pro",
   },
 ];
 

@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Poppins, Rubik } from "next/font/google";
 import "./globals.css";
@@ -49,11 +50,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+
         <Navbar />
+
         <main
           id="main-content"
           className={cn(
-            "flex relative min-h-screen flex-col items-center justify-start pt-14 pb-4 px-4 sm:px-10 lg:px-40 max-w-7xl mx-auto bg-transparent max-sm:pt-20 bg-[radial-gradient(#2f7df4_1px,transparent_1px)] [background-size:16px_16px]"
+            "flex relative min-h-screen flex-col items-center justify-start pt-14 pb-4 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto bg-transparent max-sm:pt-20"
           )}
         >
           {children}
