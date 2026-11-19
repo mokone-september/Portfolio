@@ -1,9 +1,8 @@
-
 import FramerWrapper from "@/components/animation/FramerWrapper";
 import Heading from "@/components/Heading";
 import ProjectCards from "@/components/ProjectsCard";
 import { Badge } from "@/components/ui/badge";
-import { Layers } from "lucide-react";
+import { FolderKanban } from "lucide-react";
 import { createPageMetadata, pageSeo } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -69,38 +68,40 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <main className="container mx-auto min-h-screen px-4 py-12 sm:px-6 lg:px-8">
-      <FramerWrapper>
-        <div className="mx-auto max-w-3xl text-center">
-          <Badge
-            variant="secondary"
-            className="mb-4 inline-flex items-center gap-2"
-          >
-            <Layers className="h-4 w-4" />
-            My Work
-          </Badge>
+      <div className="relative flex h-full w-full flex-col items-start gap-8 overflow-hidden pb-8">
+        {/* Projects Badge */}
+        <Badge variant="secondary" className="gap-1.5 py-1">
+          <FolderKanban className="h-4 w-4" />
+          Projects
+        </Badge>
 
-          <Heading>Projects</Heading>
+        {/* Centred Heading and Description */}
+        <FramerWrapper>
+          <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+            <Heading>My Projects</Heading>
 
-          <p className="mt-4 text-muted-foreground">
-            A selection of projects where I apply software engineering
-            principles to build practical, responsive, and maintainable
-            applications.
-          </p>
-        </div>
-      </FramerWrapper>
+            <p className="mt-4 text-muted-foreground">
+              A selection of projects where I apply software engineering
+              principles to build practical, responsive, and maintainable
+              applications.
+            </p>
+          </div>
+        </FramerWrapper>
 
-      <section
-        aria-label="Projects"
-        className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2"
-      >
-        {projects.map((project, index) => (
-          <ProjectCards
-            key={project.title}
-            value={project}
-            num={index}
-          />
-        ))}
-      </section>
+        {/* Project Cards */}
+        <section
+          aria-label="Projects"
+          className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-2"
+        >
+          {projects.map((project, index) => (
+            <ProjectCards
+              key={project.title}
+              value={project}
+              num={index}
+            />
+          ))}
+        </section>
+      </div>
     </main>
   );
 }
