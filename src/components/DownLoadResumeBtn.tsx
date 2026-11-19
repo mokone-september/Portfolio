@@ -1,10 +1,14 @@
-
 "use client";
 
-import React from "react";
 import HackerBtn from "./animation/HackerBtn";
 
-function DownLoadResumeBtn() {
+type DownLoadResumeBtnProps = {
+  label?: string;
+};
+
+function DownLoadResumeBtn({
+  label = "Download CV",
+}: DownLoadResumeBtnProps) {
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = "/Thabiso_Kenneth_Mokone_-_Software_Developer.pdf";
@@ -14,10 +18,7 @@ function DownLoadResumeBtn() {
 
   return (
     <div className="flex w-full justify-center lg:justify-start">
-      <HackerBtn
-        label="Download Resume"
-        onClick={downloadResume}
-      />
+      <HackerBtn label={label} onClick={downloadResume} />
     </div>
   );
 }

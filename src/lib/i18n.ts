@@ -1,5 +1,4 @@
-
-export const locales = ["en", "es"] as const;
+export const locales = ["en", "af"] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "en";
@@ -7,7 +6,7 @@ export const defaultLocale: Locale = "en";
 export const translations = {
   en: {
     languageName: "English",
-    languageToggle: "ES",
+    languageToggle: "AF",
     navbar: {
       home: "Home",
       about: "About",
@@ -23,13 +22,15 @@ export const translations = {
       intro: "Hi, my name is",
       heroTitleLine1: "Thabiso Kenneth",
       heroTitleLine2: "Mokone.",
-      summary: "I'm a Software Developer focused on",
+      summary: "I build modern web applications with",
       rotator: [
-        "Frontend Development",
-        "Full-Stack Development",
-        "React & TypeScript",
-        "Building Web Applications",
+        "React & Next.js",
+        "TypeScript",
+        "Node.js",
+        "Responsive Web Design",
       ],
+      technologies: ["React", "Next.js", "TypeScript", "Node.js"],
+      resumeButton: "Download CV",
     },
     about: {
       badge: "About me",
@@ -39,9 +40,9 @@ export const translations = {
       hobbyList: ["Coding", "Cooking & Gardening", "Creating Projects"],
     },
     contact: {
-      badge: "Contact Us",
+      badge: "Contact",
       heading: "Contact Me!",
-      formTitle: "Send me a mail.",
+      formTitle: "Send me a message.",
       formDescription: "Once submitted, you’ll be redirected to the home page.",
       name: "Name",
       email: "Email",
@@ -54,7 +55,7 @@ export const translations = {
     work: {
       badge: "Work Experience",
       heading: "My Work Experience",
-      company: "Scrums (formerly SovTech)",
+      company: "Scrums.com (formerly SovTech)",
       title: "Junior Software Developer",
       location: "Johannesburg, South Africa",
       description: "In my role as a Junior Software Developer, I played a pivotal part in fostering a culture of continuous enhancement across the software development lifecycle. My responsibilities included crafting clean, reliable code, maintaining application stability, addressing bugs quickly, and implementing improvements to enhance the user and client experience. I worked closely with senior developers, product teams, and clients to deliver robust, scalable, and impactful solutions across multiple projects.",
@@ -78,11 +79,19 @@ export const translations = {
     projects: {
       badge: "Projects",
       heading: "My Projects",
-      summary: "I love building projects. Here you all find a curated collection of my creative and technical work—each project reflects problem-solving, innovation, and continuous learning. Explore and enjoy the journey behind each creation.",
+      summary: "I love building projects. Here you will find a curated collection of my creative and technical work—each project reflects problem-solving, innovation, and continuous learning. Explore and enjoy the journey behind each creation.",
     },
     more: {
       badge: "More",
-      description: "I write blogs on web development, modern tech stacks, and JavaScript tips on Medium.",
+      heading: "Beyond the Code",
+      description: "I write about web development, modern technology stacks, and JavaScript tips on Medium.",
+      featuredWriting: "Featured writing",
+      writingCategory: "Technical writing · Medium",
+      writingTitle: "Learning, building, and sharing along the way.",
+      writingDescription: "Thoughts, lessons, and practical notes from my journey as a software developer.",
+      githubDescription: "Repositories and experiments",
+      selectedProjects: "Selected projects",
+      projectsDescription: "Explore what I have been building",
       button: "Visit here",
     },
     blog: {
@@ -92,91 +101,102 @@ export const translations = {
       back: "Back to blog",
     },
   },
-  es: {
-    languageName: "Español",
+
+  af: {
+    languageName: "Afrikaans",
     languageToggle: "EN",
     navbar: {
-      home: "Inicio",
-      about: "Sobre mí",
-      skills: "Habilidades",
-      education: "Educación",
-      work: "Trabajo",
-      projects: "Proyectos",
+      home: "Tuis",
+      about: "Meer oor my",
+      skills: "Vaardighede",
+      education: "Opleiding",
+      work: "Werkservaring",
+      projects: "Projekte",
       blog: "Blog",
-      contact: "Contacto",
-      more: "Más",
+      contact: "Kontak",
+      more: "Meer",
     },
     home: {
-      intro: "Hola, me llamo",
+      intro: "Hallo, my naam is",
       heroTitleLine1: "Thabiso Kenneth",
       heroTitleLine2: "Mokone.",
-      summary: "Soy desarrollador de software especializado en",
+      summary: "Ek bou moderne webtoepassings met",
       rotator: [
-        "Desarrollo frontend",
-        "Desarrollo full-stack",
-        "React y TypeScript",
-        "Aplicaciones web",
+        "React en Next.js",
+        "TypeScript",
+        "Node.js",
+        "Responsiewe webontwerp",
       ],
+      technologies: ["React", "Next.js", "TypeScript", "Node.js"],
+      resumeButton: "Laai CV af",
     },
     about: {
-      badge: "Sobre mí",
-      heading: "Ingeniero de Software con base en Sudáfrica.",
-      body: "Soy un Ingeniero de Software Junior de Taung, Provincia del Noroeste, Sudáfrica. Me apasiona crear proyectos web y contribuir a comunidades de código abierto. Me especializo en frameworks modernos de JavaScript y diseño CSS responsivo, centrándome en crear interfaces amigables y precisas. Con gran atención al detalle y entrega eficiente, construyo experiencias web fluidas que combinan funcionalidad con un diseño elegante.",
-      hobbies: "Pasatiempos",
-      hobbyList: ["Programación", "Cocinar y jardinería", "Crear proyectos"],
+      badge: "Meer oor my",
+      heading: "Sagteware-ingenieur gebaseer in Suid-Afrika.",
+      body: "Ek is 'n junior sagteware-ingenieur van Taung in die Noordwes-provinsie, Suid-Afrika. Ek is passievol oor die ontwikkeling van webprojekte en bydraes tot oopbron-gemeenskappe. Ek spesialiseer in moderne JavaScript-raamwerke en responsiewe CSS-ontwerp, met die fokus op gebruikersvriendelike koppelvlakke wat tot in die fynste besonderhede afgewerk is. Met aandag aan detail en doeltreffende werklewering bou ek naatlose webervarings wat funksionaliteit met elegante ontwerp kombineer.",
+      hobbies: "Stokperdjies",
+      hobbyList: ["Programmering", "Kook en tuinmaak", "Die skep van projekte"],
     },
     contact: {
-      badge: "Contacto",
-      heading: "¡Contáctame!",
-      formTitle: "Envíame un correo.",
-      formDescription: "Una vez enviado, serás redirigido a la página de inicio.",
-      name: "Nombre",
-      email: "Correo electrónico",
-      message: "Tu mensaje",
-      namePlaceholder: "Ingresa tu nombre",
-      emailPlaceholder: "Ingresa tu correo",
-      messagePlaceholder: "Tu mensaje aquí...",
-      submit: "Enviar",
+      badge: "Kontak",
+      heading: "Kontak my!",
+      formTitle: "Stuur vir my 'n boodskap.",
+      formDescription: "Nadat jy die vorm ingedien het, sal jy na die tuisblad herlei word.",
+      name: "Naam",
+      email: "E-posadres",
+      message: "Jou boodskap",
+      namePlaceholder: "Voer jou naam in",
+      emailPlaceholder: "Voer jou e-posadres in",
+      messagePlaceholder: "Tik jou boodskap hier...",
+      submit: "Stuur",
     },
     work: {
-      badge: "Experiencia Laboral",
-      heading: "Mi Experiencia Laboral",
-      company: "Scrums (anteriormente SovTech)",
-      title: "Desarrollador de Software Junior",
-      location: "Johannesburgo, Sudáfrica",
-      description: "En mi rol como Desarrollador de Software Junior, jugué un papel clave en fomentar una cultura de mejora continua a lo largo del ciclo de vida del desarrollo de software. Mis responsabilidades incluyeron crear código limpio y confiable, mantener la estabilidad de la aplicación, resolver errores rápidamente e implementar mejoras para optimizar la experiencia del usuario y del cliente. Trabajé en estrecha colaboración con desarrolladores senior, equipos de producto y clientes para entregar soluciones robustas, escalables e impactantes en varios proyectos.",
+      badge: "Werkservaring",
+      heading: "My Werkservaring",
+      company: "Scrums.com (voorheen SovTech)",
+      title: "Junior Sagteware-ontwikkelaar",
+      location: "Johannesburg, Suid-Afrika",
+      description: "In my rol as junior sagteware-ontwikkelaar het ek 'n belangrike bydrae gelewer tot 'n kultuur van voortdurende verbetering deur die hele sagteware-ontwikkelingsproses. My verantwoordelikhede het die skryf van skoon, betroubare kode, die instandhouding van toepassings, die vinnige regstelling van foute en die implementering van verbeterings ingesluit om die gebruikers- en kliënte-ervaring te verbeter. Ek het nou saam met senior ontwikkelaars, produkspanne en kliënte gewerk om betroubare, skaalbare en doeltreffende oplossings vir verskeie projekte te lewer.",
     },
     skills: {
-      badge: "Mis Habilidades",
-      heading: "Mi Experiencia Técnica y Habilidades",
-      summary: "Tengo experiencia sólida con HTML5, CSS3, JavaScript, TypeScript y React, incluyendo principios de diseño responsivo. Me enfoco en construir aplicaciones web modernas usando JavaScript, TypeScript, React, Next.js y Node.js.",
-      languages: "Lenguajes de Programación",
-      frameworks: "Frameworks y Librerías",
-      tools: "Herramientas y Tecnologías",
+      badge: "My Vaardighede",
+      heading: "My Tegniese Ervaring en Vaardighede",
+      summary: "Ek het goeie ervaring met HTML5, CSS3, JavaScript, TypeScript en React, insluitend beginsels van responsiewe ontwerp. Ek fokus op die ontwikkeling van moderne webtoepassings met JavaScript, TypeScript, React, Next.js en Node.js.",
+      languages: "Programmeertale",
+      frameworks: "Raamwerke en Biblioteke",
+      tools: "Gereedskap en Tegnologieë",
     },
     education: {
-      badge: "Educación",
-      heading: "Mi Educación",
+      badge: "Opleiding",
+      heading: "My Opleiding",
       institution: "HyperionDev",
-      qualification: "Certificado del Bootcamp de Ingeniería de Software",
-      location: "Johannesburgo, Sudáfrica",
-      description: "Emprendí un viaje transformador a través del Bootcamp de Ingeniería de Software—un programa intensivo en línea que me ayudó a crecer desde principiante hasta desarrollador junior con confianza. El plan de estudios cubrió Python, Programación Orientada a Objetos y aprendizaje automático, permitiéndome construir aplicaciones prácticas del mundo real. El programa ofreció mentoría directa, retroalimentación estructurada y una comunidad de apoyo que me mantuvo motivado mientras enfrentaba desafíos y desarrollaba una base sólida para mi carrera en tecnología.",
+      qualification: "Sagteware-ingenieurswese-bootcampsertifikaat",
+      location: "Johannesburg, Suid-Afrika",
+      description: "Ek het 'n betekenisvolle ontwikkelingsreis aangepak deur die Sagteware-ingenieurswese-bootcamp—'n intensiewe aanlynprogram wat my gehelp het om van 'n beginner tot 'n selfversekerde junior ontwikkelaar te groei. Die kurrikulum het Python, objekgeoriënteerde programmering en masjienleer ingesluit, wat my in staat gestel het om praktiese toepassings vir werklike probleme te bou. Die program het direkte mentorskap, gestruktureerde terugvoer en 'n ondersteunende gemeenskap gebied wat my gemotiveer het terwyl ek uitdagings aangepak en 'n sterk grondslag vir my loopbaan in tegnologie ontwikkel het.",
     },
     projects: {
-      badge: "Proyectos",
-      heading: "Mis Proyectos",
-      summary: "Me encanta construir proyectos. Aquí encontrarás una colección seleccionada de mi trabajo creativo y técnico—cada proyecto refleja resolución de problemas, innovación y aprendizaje continuo. Explora y disfruta el proceso detrás de cada creación.",
+      badge: "Projekte",
+      heading: "My Projekte",
+      summary: "Ek geniet dit om projekte te bou. Hier vind jy 'n versameling van my kreatiewe en tegniese werk. Elke projek weerspieël probleemoplossing, innovasie en voortdurende leer. Verken gerus die projekte en ontdek die proses agter elke skepping.",
     },
     more: {
-      badge: "Más",
-      description: "Escribo blogs sobre desarrollo web, pilas tecnológicas modernas y consejos de JavaScript en Medium.",
-      button: "Visitar",
+      badge: "Meer",
+      heading: "Meer as net kode",
+      description: "Ek skryf op Medium oor webontwikkeling, moderne tegnologiestapels en wenke vir JavaScript.",
+      featuredWriting: "Uitgeligte skryfwerk",
+      writingCategory: "Tegniese skryfwerk · Medium",
+      writingTitle: "Leer, bou en deel langs die pad.",
+      writingDescription: "Gedagtes, lesse en praktiese notas uit my reis as sagteware-ontwikkelaar.",
+      githubDescription: "Bewaarplekke en eksperimente",
+      selectedProjects: "Geselekteerde projekte",
+      projectsDescription: "Ontdek waaraan ek gewerk het",
+      button: "Besoek hier",
     },
     blog: {
-      title: "Mi Blog",
-      subtitle: "Notas cortas y tutoriales.",
-      readMore: "Leer más",
-      back: "Volver al blog",
+      title: "My Blog",
+      subtitle: "Kort notas en tutoriaalartikels.",
+      readMore: "Lees Meer",
+      back: "Terug na die blog",
     },
   },
 } as const;
@@ -192,18 +212,18 @@ export function getTranslations(locale: string | undefined) {
 }
 
 export function getLocaleFromPath(pathname: string) {
-  if (pathname.startsWith("/es")) {
-    return "es" as Locale;
+  if (pathname.startsWith("/af")) {
+    return "af" as Locale;
   }
   if (pathname.startsWith("/en")) {
     return "en" as Locale;
   }
-  return "en" as Locale;
+  return defaultLocale;
 }
 
 export function removeLocalePrefix(pathname: string) {
-  if (pathname === "/es" || pathname === "/en") return "/";
-  if (pathname.startsWith("/es/")) return pathname.replace("/es", "");
+  if (pathname === "/af" || pathname === "/en") return "/";
+  if (pathname.startsWith("/af/")) return pathname.replace("/af", "");
   if (pathname.startsWith("/en/")) return pathname.replace("/en", "");
   return pathname;
 }

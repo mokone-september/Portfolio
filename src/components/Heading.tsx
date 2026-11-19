@@ -1,10 +1,16 @@
 import FramerWrapper from "./animation/FramerWrapper";
 
-const Heading = ({ children }: { children: React.ReactNode }) => {
-  // CUSTOM HEADING FOR ALL PAGE
+type HeadingProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+const Heading = ({ children, className = "" }: HeadingProps) => {
   return (
-    <FramerWrapper y={0} x={-100}>
-      <h1 className="font-poppins text-primary font-bold text-4xl name_underline max-sm:text-2xl">
+    <FramerWrapper y={0} x={-100} className="w-full">
+      <h1
+        className={`name_underline mx-auto w-fit text-center font-poppins text-4xl font-bold text-primary max-sm:text-2xl ${className}`}
+      >
         {children}
       </h1>
     </FramerWrapper>

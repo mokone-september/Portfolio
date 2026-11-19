@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
@@ -11,7 +10,22 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import FramerWrapper from "@/components/animation/FramerWrapper";
-import { ArrowUpRight, Github } from "lucide-react";
+import {
+  ArrowUpRight,
+  Github,
+  ShieldCheck,
+  PanelsTopLeft,
+  Terminal,
+  Gamepad2,
+  type LucideIcon,
+} from "lucide-react";
+
+const projectIcons: Record<string, LucideIcon> = {
+  "Ubuntu Security Toolkit": ShieldCheck,
+  "AI Whiteboard": PanelsTopLeft,
+  "Rust CLI Task Manager": Terminal,
+  "Pokedex Pro": Gamepad2,
+};
 
 const tagStyles: Record<string, string> = {
   "Next.js": "bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100",
@@ -70,11 +84,13 @@ export default function ProjectCards({
   value,
   num = 0,
 }: ProjectCardsProps) {
+  const ProjectIcon = projectIcons[value.title] ?? PanelsTopLeft;
+
   return (
     <FramerWrapper>
       <Card className="group flex h-full min-h-[340px] flex-col overflow-hidden border-border/70 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-        <CardHeader className="space-y-4">
-          <div className="flex items-center justify-between">
+        <CardHeader className="space-y-5">
+          <div className="flex items-center justify-between gap-3">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               Project {String(num + 1).padStart(2, "0")}
             </span>
@@ -84,14 +100,20 @@ export default function ProjectCards({
             </span>
           </div>
 
-          <div className="space-y-2">
-            <CardTitle className="text-xl transition-colors group-hover:text-primary sm:text-2xl">
-              {value.title}
-            </CardTitle>
+          <div className="flex items-start gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-secondary/70 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <ProjectIcon className="h-5 w-5" aria-hidden="true" />
+            </div>
 
-            <CardDescription className="text-sm leading-7 text-muted-foreground">
-              {value.description}
-            </CardDescription>
+            <div className="min-w-0 space-y-2">
+              <CardTitle className="text-xl transition-colors group-hover:text-primary sm:text-2xl">
+                {value.title}
+              </CardTitle>
+
+              <CardDescription className="text-sm leading-7 text-muted-foreground">
+                {value.description}
+              </CardDescription>
+            </div>
           </div>
         </CardHeader>
 

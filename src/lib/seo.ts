@@ -70,54 +70,57 @@ export const pageSeo = {
         "Find more writing and links from Thabiso Mokone across web development, JavaScript, and modern technology.",
     },
   },
-  es: {
+  af: {
     home: {
-      title: "TK Mokone | Ingeniero de Software",
+      title: "TK Mokone | Sagteware-ingenieur",
       description:
-        "Conoce a Thabiso Kenneth Mokone, un ingeniero de software que crea experiencias web accesibles, responsivas y centradas en el usuario.",
+        "Ontmoet Thabiso Kenneth Mokone, 'n sagteware-ingenieur wat toeganklike, responsiewe en gebruikersgerigte webervarings ontwikkel.",
     },
     about: {
-      title: "Sobre Thabiso Kenneth Mokone",
+      title: "Meer oor Thabiso Kenneth Mokone",
       description:
-        "Conoce a Thabiso Kenneth Mokone, un ingeniero de software sudafricano apasionado por el desarrollo web moderno y el código abierto.",
+        "Leer meer oor Thabiso Kenneth Mokone, 'n Suid-Afrikaanse sagteware-ingenieur met 'n passie vir moderne webontwikkeling en oopbronsagteware.",
     },
     skills: {
-      title: "Habilidades Frontend | TK Mokone",
+      title: "Front-end Vaardighede | TK Mokone",
       description:
-        "Explora las habilidades frontend de Thabiso Mokone en JavaScript, TypeScript, React, Next.js, Vue, CSS y herramientas modernas.",
+        "Ontdek Thabiso Mokone se front-end vaardighede in JavaScript, TypeScript, React, Next.js, Vue, CSS en moderne ontwikkelaarnutsmiddels.",
     },
     education: {
-      title: "Educación | TK Mokone",
+      title: "Opleiding | TK Mokone",
       description:
-        "Consulta la formación y educación de Thabiso Mokone en ingeniería de software.",
+        "Lees meer oor Thabiso Mokone se opleiding en agtergrond in sagteware-ingenieurswese.",
     },
     work: {
-      title: "Experiencia Laboral | TK Mokone",
+      title: "Werkservaring | TK Mokone",
       description:
-        "Revisa la experiencia de Thabiso Mokone en desarrollo de software y la creación de soluciones web confiables.",
+        "Ontdek Thabiso Mokone se sagteware-ontwikkelingservaring en sy bydraes tot betroubare weboplossings.",
     },
     projects: {
-      title: "Proyectos | TK Mokone",
+      title: "Projekte | TK Mokone",
       description:
-        "Explora proyectos web seleccionados de Thabiso Mokone con React, Vue, TypeScript, APIs y diseños responsivos.",
+        "Verken Thabiso Mokone se webprojekte met React, Vue, TypeScript, API's en responsiewe gebruikerskoppelvlakke.",
     },
     blog: {
       title: "Blog | TK Mokone",
       description:
-        "Lee notas y tutoriales de Thabiso Mokone sobre desarrollo web, diseño, JavaScript y tecnología moderna.",
+        "Lees Thabiso Mokone se artikels en tutoriaalinhoud oor webontwikkeling, ontwerp, JavaScript en moderne tegnologie.",
     },
     contact: {
-      title: "Contacta a Thabiso Mokone",
+      title: "Kontak Thabiso Mokone",
       description:
-        "Ponte en contacto con Thabiso Kenneth Mokone sobre ingeniería de software, desarrollo frontend y colaboraciones.",
+        "Kontak Thabiso Kenneth Mokone oor sagteware-ingenieurswese, front-end ontwikkeling en samewerkingsgeleenthede.",
     },
     more: {
-      title: "Más de TK Mokone",
+      title: "Meer van TK Mokone",
       description:
-        "Encuentra más artículos y enlaces de Thabiso Mokone sobre desarrollo web, JavaScript y tecnología moderna.",
+        "Vind nog artikels en skakels van Thabiso Mokone oor webontwikkeling, JavaScript en moderne tegnologie.",
     },
   },
-} as const satisfies Record<Locale, Record<SeoPageKey, { title: string; description: string }>>;
+} as const satisfies Record<
+  Locale,
+  Record<SeoPageKey, { title: string; description: string }>
+>;
 
 export function absoluteUrl(path: string) {
   return new URL(path, siteConfig.url).toString();
@@ -132,7 +135,10 @@ export function localizedPath(locale: Locale, path: string) {
   return buildLocalePath(locale, normalizedPath);
 }
 
-export function getPageSeo(locale: Locale, page: string): (typeof pageSeo)[Locale][SeoPageKey] {
+export function getPageSeo(
+  locale: Locale,
+  page: string
+): (typeof pageSeo)[Locale][SeoPageKey] {
   return pageSeo[locale][page as SeoPageKey] ?? pageSeo[locale].home;
 }
 
@@ -177,7 +183,7 @@ export function createPageMetadata({
     },
     openGraph: {
       type,
-      locale: locale === "es" ? "es_ES" : "en_US",
+      locale: locale === "af" ? "af_ZA" : "en_US",
       url: absoluteUrl(canonicalPath),
       siteName: siteConfig.name,
       title,

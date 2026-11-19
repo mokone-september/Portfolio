@@ -1,26 +1,46 @@
-import { Resend } from "resend";
-import { redirect } from "next/navigation";
+"use server";
 
-// EMAIL FUNCTIONALITY
-// Ensure RESEND_API_KEY is set in .env.local
+import { Resend } from "resend";
+
+type ContactFormState = {
+  status: "idle" | "success" | "error";
+};
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const SendEmail = async (formdata: FormData) => {
-  const message = formdata.get("message")?.toString();
-  const name = formdata.get("name")?.toString();
-  const SenderEmail = formdata.get("SenderEmail")?.toString();
+export async function SendEmail(
+  _previousState: ContactFormState,
+  formData: FormData,
+): Promise<ContactFormState> {
+  const name = formData.get("name")?.toString().trim();
+  const senderEmail = formData.get("SenderEmail")?.toString().trim();
+  const message = formData.get("message")?.toString().trim();
 
-  if (!message || !name || !SenderEmail) {
-    throw new Error("Missing required fields");
+  if (!name || !senderEmail || !message) {
+    return { status: "error" };
   }
 
-  await resend.emails.send({
-    from: "Contact Form <onboarding@resend.dev>",
-    to: "mokoneseptember@gmail.com",
-    subject: `${name} From Contact Form.`,
-    replyTo: SenderEmail,
-    text: `sender email: ${SenderEmail}\n\n${message}`,
-  });
+  if (!process.env.RESEND_API_KEY) {
+    return { status: "error" };
+  }
 
-  redirect("/");
-};
+  try {
+    const { error } = await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
+      to: "mokoneseptember@gmail.com",
+      subject: `${name} from Contact Form`,
+      replyTo: senderEmail,
+      text: `Name: ${name}\nSender email: ${senderEmail}\n\n${message}`,
+    });
+
+    if (error) {
+      console.error("Resend email error:", error);
+      return { status: "error" };
+    }
+
+    return { status: "success" };
+  } catch (error) {
+    console.error("Contact form submission failed:", error);
+    return { status: "error" };
+  }
+}

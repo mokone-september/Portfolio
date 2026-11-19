@@ -2,20 +2,20 @@ import Link from "next/link";
 import Image from "next/image";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import FramerWrapper from "@/components/animation/FramerWrapper";
 import ProjectCards from "@/components/ProjectsCard";
 import SocialLinks from "@/components/SocialLinks";
 import DownLoadResumeBtn from "@/components/DownLoadResumeBtn";
 import {
   ArrowUpLeft,
-  ExternalLink,
+  ArrowUpRight,
+  BookOpen,
+  Briefcase,
+  Github,
+  FolderKanban,
   Heart,
   Phone,
   PackagePlus,
-  Briefcase,
   GraduationCap,
   Layers,
   LightbulbIcon,
@@ -29,72 +29,83 @@ export function LocalizedHomePage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
   return (
-    <div className="flex w-full flex-col gap-10 px-0 sm:px-4 lg:flex-row lg:items-start lg:gap-20">
+    <div className="flex w-full flex-col items-center gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:min-h-[calc(100vh-6rem)] lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:pb-20 lg:pt-20">
       <FramerWrapper
-        className="flex w-full flex-col justify-start gap-6 lg:w-1/2 items-center text-center lg:items-start lg:text-left"
+        className="flex w-full flex-col items-center justify-center gap-7 text-center lg:w-1/2 lg:items-start lg:text-left"
         y={0}
         x={-100}
       >
-        <div>
-          <h3 className="font-poppins text-2xl text-[#6f7073]">
+        <div className="w-full">
+          <p className="mb-3 font-poppins text-lg font-medium text-[#6f7073] dark:text-gray-300 sm:text-2xl">
             {t.home.intro}
-          </h3>
+          </p>
 
-          <h1 className="font-rubik text-4xl sm:text-6xl md:text-7xl lg:text-8xl name_underline text-primary">
+          <h1 className="font-rubik text-4xl font-bold leading-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl name_underline">
             {t.home.heroTitleLine1}
             <br />
             {t.home.heroTitleLine2}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-center py-4 rounded-md overflow-hidden lg:justify-start">
-            <div className="font-poppins text-base sm:text-2xl font-semibold text-[#4f5052] dark:text-gray-300">
-              {t.home.summary}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-2 font-poppins text-base font-semibold leading-normal text-[#4f5052] dark:text-gray-300 sm:text-2xl lg:justify-start">
+            <span>{t.home.summary}</span>
 
-              <span className="ml-2 inline-flex h-[1.5em] overflow-hidden align-middle">
-                <span className="animate-home-role-slide flex flex-col text-left font-rubik text-lg leading-tight text-[#2f7df4] sm:text-3xl">
-                  {t.home.rotator.map((item) => (
-                    <span
-                      key={item}
-                      className="flex h-[1.5em] items-center whitespace-nowrap"
-                    >
-                      {item}
-                    </span>
-                  ))}
-
+            <span
+              className="relative inline-flex h-[1.5em] min-w-[12rem] overflow-hidden align-middle text-left font-rubik text-lg text-[#2f7df4] sm:min-w-[17rem] sm:text-3xl"
+              aria-label={t.home.rotator.join(", ")}
+            >
+              <span className="animate-home-role-slide flex flex-col">
+                {t.home.rotator.map((item) => (
                   <span
-                    aria-hidden="true"
+                    key={item}
                     className="flex h-[1.5em] items-center whitespace-nowrap"
                   >
-                    {t.home.rotator[0]}
+                    {item}
                   </span>
+                ))}
+
+                <span
+                  aria-hidden="true"
+                  className="flex h-[1.5em] items-center whitespace-nowrap"
+                >
+                  {t.home.rotator[0]}
                 </span>
               </span>
-            </div>
+            </span>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-4">
-          <div className="flex w-full flex-wrap justify-center gap-4 lg:justify-start">
-            <SocialLinks />
-          </div>
+        <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+          {t.home.technologies.map((technology) => (
+            <Badge
+              key={technology}
+              variant="secondary"
+              className="px-3 py-1 text-sm"
+            >
+              {technology}
+            </Badge>
+          ))}
         </div>
 
-        <DownLoadResumeBtn />
+        <SocialLinks />
+
+        <DownLoadResumeBtn label={t.home.resumeButton} />
       </FramerWrapper>
 
       <FramerWrapper
-        className="relative w-full max-w-lg self-center lg:w-1/2"
+        className="relative flex w-full max-w-lg items-center justify-center self-center lg:w-1/2"
         y={0}
         x={100}
       >
-        <Image
-          src="/portfolioLogo.png"
-          alt="TK Mokone portfolio illustration"
-          width={600}
-          height={600}
-          className="mx-auto"
-          priority={false}
-        />
+        <div className="relative aspect-square w-full max-w-md">
+          <Image
+            src="/portfolioLogo.png"
+            alt="TK Mokone portfolio illustration"
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, 40vw"
+            className="object-contain"
+          />
+        </div>
       </FramerWrapper>
     </div>
   );
@@ -347,9 +358,9 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
           </h2>
 
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            {programmingLanguages.map((item, index) => (
+            {programmingLanguages.map((item) => (
               <div
-                key={index}
+                key={item.name}
                 className="rounded-lg border border-border p-3 text-center"
               >
                 <Image
@@ -372,9 +383,9 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
           </h2>
 
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            {frameworks.map((item, index) => (
+            {frameworks.map((item) => (
               <div
-                key={index}
+                key={item.name}
                 className="rounded-lg border border-border p-3 text-center"
               >
                 <Image
@@ -397,9 +408,9 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
           </h2>
 
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            {tools.map((item, index) => (
+            {tools.map((item) => (
               <div
-                key={index}
+                key={item.name}
                 className="rounded-lg border border-border p-3 text-center"
               >
                 <Image
@@ -425,7 +436,7 @@ export function LocalizedEducationPage({ locale }: { locale: Locale }) {
 
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <Badge variant="secondary" className="gap-1.5 py-1 ">
+      <Badge variant="secondary" className="gap-1.5 py-1">
         <GraduationCap className="h-4 w-4" />
         {t.education.badge}
       </Badge>
@@ -515,6 +526,7 @@ export function LocalizedProjectsPage({ locale }: { locale: Locale }) {
       github: "https://github.com/mokone-september/pokedex-pro",
     },
   ];
+
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
       <Badge variant="secondary" className="gap-1.5 py-1">
@@ -544,72 +556,100 @@ export function LocalizedProjectsPage({ locale }: { locale: Locale }) {
 export function LocalizedMorePage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
-  const moreLinks = [
-    {
-      title: "Medium",
-      description: t.more.description,
-      link: "https://medium.com/@mokoneseptember",
-    },
-  ];
-
   return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-28 pointer-events-none select-none z-0">
-        <Image
-          src="/looking-ahead.png"
-          alt=""
-          width={420}
-          height={420}
-          className="opacity-95"
-          priority={false}
-        />
+    <main className="relative flex min-h-full w-full flex-col gap-8 overflow-hidden">
+      <div className="relative z-10 flex flex-col items-start gap-4">
+        <Badge variant="secondary" className="gap-1.5 py-1">
+          <PackagePlus className="h-4 w-4" />
+          {t.more.badge}
+        </Badge>
+
+        <Heading>{t.more.heading}</Heading>
+
+        <p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
+          {t.more.description}
+        </p>
       </div>
 
-      <Badge variant="secondary" className="gap-1.5 py-1">
-        <PackagePlus className="h-4 w-4" />
-        {t.more.badge}
-      </Badge>
+      <FramerWrapper y={20} scale={1} delay={0.1} duration={0.3}>
+        <section className="relative w-full overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm md:p-10">
+          <div className="mb-8 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            <BookOpen className="h-4 w-4" />
+            {t.more.featuredWriting}
+          </div>
 
-      <div className="flex flex-col gap-3 relative z-10">
-        <Heading>{t.more.badge}</Heading>
-      </div>
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm font-medium text-muted-foreground">
+              {t.more.writingCategory}
+            </p>
 
-      <div className="h-auto w-full flex flex-wrap gap-3 p-2">
-        {moreLinks.map((value, index) => (
-          <FramerWrapper
-            key={index}
-            className="max-w-[32%] max-lg:max-w-full"
-            y={0}
-            scale={0.8}
-            delay={index / 4}
-            duration={0.15}
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              {t.more.writingTitle}
+            </h2>
+
+            <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
+              {t.more.writingDescription}
+            </p>
+
+            <Link
+              href="https://medium.com/@mokoneseptember"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+            >
+              {t.more.button}
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+      </FramerWrapper>
+
+      <section className="grid w-full gap-4 md:grid-cols-2">
+        <FramerWrapper y={20} scale={1} delay={0.2} duration={0.3}>
+          <Link
+            href="https://github.com/mokone-september"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex h-full items-center justify-between gap-5 rounded-2xl border border-border bg-card p-6 transition hover:border-primary/50 hover:shadow-md"
           >
-            <div className="w-full">
-              <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {value.description}
-                  </p>
-                </div>
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted">
+                <Github className="h-6 w-6" />
+              </div>
 
-                <div className="flex justify-end">
-                  <Link
-                    href={value.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-neutral-800 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
-                  >
-                    <ExternalLink />
-                    {t.more.button}
-                  </Link>
-                </div>
+              <div>
+                <h3 className="font-semibold">GitHub</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t.more.githubDescription}
+                </p>
               </div>
             </div>
-          </FramerWrapper>
-        ))}
-      </div>
-    </div>
+
+            <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+          </Link>
+        </FramerWrapper>
+
+        <FramerWrapper y={20} scale={1} delay={0.3} duration={0.3}>
+          <Link
+            href={buildLocalePath(locale, "/projects")}
+            className="group flex h-full items-center justify-between gap-5 rounded-2xl border border-border bg-card p-6 transition hover:border-primary/50 hover:shadow-md"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted">
+              <FolderKanban className="h-6 w-6" />
+            </div>
+
+            <div className="flex-1">
+              <h3 className="font-semibold">{t.more.selectedProjects}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t.more.projectsDescription}
+              </p>
+            </div>
+
+            <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+          </Link>
+        </FramerWrapper>
+      </section>
+    </main>
   );
 }
 
