@@ -76,7 +76,7 @@ export default function ProjectsPage() {
         </Badge>
 
         {/* Centred Heading and Description */}
-        <FramerWrapper>
+        <FramerWrapper className="w-full">
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
             <Heading>My Projects</Heading>
 

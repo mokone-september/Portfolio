@@ -43,7 +43,8 @@ export const translations = {
       badge: "Contact",
       heading: "Contact Me!",
       formTitle: "Send me a message.",
-      formDescription: "Once submitted, you’ll be redirected to the home page.",
+      formDescription:
+        "Have a question or want to work together? Send me a message.",
       name: "Name",
       email: "Email",
       message: "Your Message",
@@ -51,6 +52,12 @@ export const translations = {
       emailPlaceholder: "Enter your email",
       messagePlaceholder: "Your message here...",
       submit: "Submit",
+      thankYouTitle: "Thank you for getting in touch!",
+      thankYouDescription:
+        "Your message has been sent successfully. I appreciate you reaching out and will get back to you as soon as possible.",
+      submitError:
+        "Something went wrong while sending your message. Please try again.",
+      sending: "Sending...",
     },
     work: {
       badge: "Work Experience",
@@ -58,12 +65,14 @@ export const translations = {
       company: "Scrums.com (formerly SovTech)",
       title: "Junior Software Developer",
       location: "Johannesburg, South Africa",
-      description: "In my role as a Junior Software Developer, I played a pivotal part in fostering a culture of continuous enhancement across the software development lifecycle. My responsibilities included crafting clean, reliable code, maintaining application stability, addressing bugs quickly, and implementing improvements to enhance the user and client experience. I worked closely with senior developers, product teams, and clients to deliver robust, scalable, and impactful solutions across multiple projects.",
+      description:
+        "In my role as a Junior Software Developer, I played a pivotal part in fostering a culture of continuous enhancement across the software development lifecycle. My responsibilities included crafting clean, reliable code, maintaining application stability, addressing bugs quickly, and implementing improvements to enhance the user and client experience. I worked closely with senior developers, product teams, and clients to deliver robust, scalable, and impactful solutions across multiple projects.",
     },
     skills: {
       badge: "My Skills",
       heading: "My Technical Experience & Skills",
-      summary: "I have strong experience with HTML5, CSS3, JavaScript, TypeScript, and React, including responsive design principles. I focus on building modern web applications using JavaScript, TypeScript, React, Next.js, and Node.js.",
+      summary:
+        "I have strong experience with HTML5, CSS3, JavaScript, TypeScript, and React, including responsive design principles. I focus on building modern web applications using JavaScript, TypeScript, React, Next.js, and Node.js.",
       languages: "Programming Languages",
       frameworks: "Frameworks & Libraries",
       tools: "Tools & Technologies",
@@ -74,21 +83,25 @@ export const translations = {
       institution: "HyperionDev",
       qualification: "Software Engineering Bootcamp Certificate",
       location: "Johannesburg, South Africa",
-      description: "I embarked on a transformative journey through the Software Engineering Bootcamp—an intensive online program that helped me grow from a beginner into a confident junior developer. The curriculum covered Python, Object-Oriented Programming, and machine learning, empowering me to build practical real-world applications. The program offered direct mentorship, structured feedback, and a supportive community that kept me motivated while tackling challenges and developing a strong foundation for my tech career.",
+      description:
+        "I embarked on a transformative journey through the Software Engineering Bootcamp—an intensive online program that helped me grow from a beginner into a confident junior developer. The curriculum covered Python, Object-Oriented Programming, and machine learning, empowering me to build practical real-world applications. The program offered direct mentorship, structured feedback, and a supportive community that kept me motivated while tackling challenges and developing a strong foundation for my tech career.",
     },
     projects: {
       badge: "Projects",
       heading: "My Projects",
-      summary: "I love building projects. Here you will find a curated collection of my creative and technical work—each project reflects problem-solving, innovation, and continuous learning. Explore and enjoy the journey behind each creation.",
+      summary:
+        "I love building projects. Here you will find a curated collection of my creative and technical work—each project reflects problem-solving, innovation, and continuous learning. Explore and enjoy the journey behind each creation.",
     },
     more: {
       badge: "More",
       heading: "Beyond the Code",
-      description: "I write about web development, modern technology stacks, and JavaScript tips on Medium.",
+      description:
+        "I write about web development, modern technology stacks, and JavaScript tips on Medium.",
       featuredWriting: "Featured writing",
       writingCategory: "Technical writing · Medium",
       writingTitle: "Learning, building, and sharing along the way.",
-      writingDescription: "Thoughts, lessons, and practical notes from my journey as a software developer.",
+      writingDescription:
+        "Thoughts, lessons, and practical notes from my journey as a software developer.",
       githubDescription: "Repositories and experiments",
       selectedProjects: "Selected projects",
       projectsDescription: "Explore what I have been building",
@@ -141,7 +154,8 @@ export const translations = {
       badge: "Kontak",
       heading: "Kontak my!",
       formTitle: "Stuur vir my 'n boodskap.",
-      formDescription: "Nadat jy die vorm ingedien het, sal jy na die tuisblad herlei word.",
+      formDescription:
+        "Het jy 'n vraag of wil jy saamwerk? Stuur vir my 'n boodskap.",
       name: "Naam",
       email: "E-posadres",
       message: "Jou boodskap",
@@ -149,6 +163,12 @@ export const translations = {
       emailPlaceholder: "Voer jou e-posadres in",
       messagePlaceholder: "Tik jou boodskap hier...",
       submit: "Stuur",
+      thankYouTitle: "Dankie dat jy my gekontak het!",
+      thankYouDescription:
+        "Jou boodskap is suksesvol gestuur. Ek waardeer dit dat jy kontak gemaak het en sal so gou moontlik op jou boodskap reageer.",
+      submitError:
+        "Iets het verkeerd geloop met die stuur van jou boodskap. Probeer asseblief weer.",
+      sending: "Stuur tans...",
     },
     work: {
       badge: "Werkservaring",
@@ -156,12 +176,14 @@ export const translations = {
       company: "Scrums.com (voorheen SovTech)",
       title: "Junior Sagteware-ontwikkelaar",
       location: "Johannesburg, Suid-Afrika",
-      description: "In my rol as junior sagteware-ontwikkelaar het ek 'n belangrike bydrae gelewer tot 'n kultuur van voortdurende verbetering deur die hele sagteware-ontwikkelingsproses. My verantwoordelikhede het die skryf van skoon, betroubare kode, die instandhouding van toepassings, die vinnige regstelling van foute en die implementering van verbeterings ingesluit om die gebruikers- en kliënte-ervaring te verbeter. Ek het nou saam met senior ontwikkelaars, produkspanne en kliënte gewerk om betroubare, skaalbare en doeltreffende oplossings vir verskeie projekte te lewer.",
+      description:
+        "In my rol as junior sagteware-ontwikkelaar het ek 'n belangrike bydrae gelewer tot 'n kultuur van voortdurende verbetering deur die hele sagteware-ontwikkelingsproses. My verantwoordelikhede het die skryf van skoon, betroubare kode, die instandhouding van toepassings, die vinnige regstelling van foute en die implementering van verbeterings ingesluit om die gebruikers- en kliënte-ervaring te verbeter. Ek het nou saam met senior ontwikkelaars, produkspanne en kliënte gewerk om betroubare, skaalbare en doeltreffende oplossings vir verskeie projekte te lewer.",
     },
     skills: {
       badge: "My Vaardighede",
       heading: "My Tegniese Ervaring en Vaardighede",
-      summary: "Ek het goeie ervaring met HTML5, CSS3, JavaScript, TypeScript en React, insluitend beginsels van responsiewe ontwerp. Ek fokus op die ontwikkeling van moderne webtoepassings met JavaScript, TypeScript, React, Next.js en Node.js.",
+      summary:
+        "Ek het goeie ervaring met HTML5, CSS3, JavaScript, TypeScript en React, insluitend beginsels van responsiewe ontwerp. Ek fokus op die ontwikkeling van moderne webtoepassings met JavaScript, TypeScript, React, Next.js en Node.js.",
       languages: "Programmeertale",
       frameworks: "Raamwerke en Biblioteke",
       tools: "Gereedskap en Tegnologieë",
@@ -172,21 +194,25 @@ export const translations = {
       institution: "HyperionDev",
       qualification: "Sagteware-ingenieurswese-bootcampsertifikaat",
       location: "Johannesburg, Suid-Afrika",
-      description: "Ek het 'n betekenisvolle ontwikkelingsreis aangepak deur die Sagteware-ingenieurswese-bootcamp—'n intensiewe aanlynprogram wat my gehelp het om van 'n beginner tot 'n selfversekerde junior ontwikkelaar te groei. Die kurrikulum het Python, objekgeoriënteerde programmering en masjienleer ingesluit, wat my in staat gestel het om praktiese toepassings vir werklike probleme te bou. Die program het direkte mentorskap, gestruktureerde terugvoer en 'n ondersteunende gemeenskap gebied wat my gemotiveer het terwyl ek uitdagings aangepak en 'n sterk grondslag vir my loopbaan in tegnologie ontwikkel het.",
+      description:
+        "Ek het 'n betekenisvolle ontwikkelingsreis aangepak deur die Sagteware-ingenieurswese-bootcamp—'n intensiewe aanlynprogram wat my gehelp het om van 'n beginner tot 'n selfversekerde junior ontwikkelaar te groei. Die kurrikulum het Python, objekgeoriënteerde programmering en masjienleer ingesluit, wat my in staat gestel het om praktiese toepassings vir werklike probleme te bou. Die program het direkte mentorskap, gestruktureerde terugvoer en 'n ondersteunende gemeenskap gebied wat my gemotiveer het terwyl ek uitdagings aangepak en 'n sterk grondslag vir my loopbaan in tegnologie ontwikkel het.",
     },
     projects: {
       badge: "Projekte",
       heading: "My Projekte",
-      summary: "Ek geniet dit om projekte te bou. Hier vind jy 'n versameling van my kreatiewe en tegniese werk. Elke projek weerspieël probleemoplossing, innovasie en voortdurende leer. Verken gerus die projekte en ontdek die proses agter elke skepping.",
+      summary:
+        "Ek geniet dit om projekte te bou. Hier vind jy 'n versameling van my kreatiewe en tegniese werk. Elke projek weerspieël probleemoplossing, innovasie en voortdurende leer. Verken gerus die projekte en ontdek die proses agter elke skepping.",
     },
     more: {
       badge: "Meer",
       heading: "Meer as net kode",
-      description: "Ek skryf op Medium oor webontwikkeling, moderne tegnologiestapels en wenke vir JavaScript.",
+      description:
+        "Ek skryf op Medium oor webontwikkeling, moderne tegnologiestapels en wenke vir JavaScript.",
       featuredWriting: "Uitgeligte skryfwerk",
       writingCategory: "Tegniese skryfwerk · Medium",
       writingTitle: "Leer, bou en deel langs die pad.",
-      writingDescription: "Gedagtes, lesse en praktiese notas uit my reis as sagteware-ontwikkelaar.",
+      writingDescription:
+        "Gedagtes, lesse en praktiese notas uit my reis as sagteware-ontwikkelaar.",
       githubDescription: "Bewaarplekke en eksperimente",
       selectedProjects: "Geselekteerde projekte",
       projectsDescription: "Ontdek waaraan ek gewerk het",
@@ -203,7 +229,9 @@ export const translations = {
 
 export type Translations = (typeof translations)[keyof typeof translations];
 
-export function isLocale(value: string | string[] | undefined): value is Locale {
+export function isLocale(
+  value: string | string[] | undefined,
+): value is Locale {
   return typeof value === "string" && locales.includes(value as Locale);
 }
 

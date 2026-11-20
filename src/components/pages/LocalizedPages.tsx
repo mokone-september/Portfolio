@@ -157,14 +157,14 @@ export function LocalizedContactPage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
   return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <div className="hidden lg:block absolute right-0 bottom-6 translate-x-40 pointer-events-none select-none z-0">
+    <div className="relative flex h-full w-full flex-col items-start gap-5">
+      <div className="pointer-events-none absolute right-4 top-24 z-0 hidden select-none lg:block">
         <Image
           src="/cube-leg.png"
           alt=""
-          width={520}
-          height={520}
-          className="opacity-95"
+          width={420}
+          height={420}
+          className="h-auto w-[min(32vw,420px)] object-contain opacity-95"
           priority={false}
         />
       </div>
@@ -174,10 +174,10 @@ export function LocalizedContactPage({ locale }: { locale: Locale }) {
         {t.contact.badge}
       </Badge>
 
-      <section className="flex flex-col gap-3 w-full relative z-10">
+      <section className="relative z-10 flex w-full flex-col gap-3">
         <Heading>{t.contact.heading}</Heading>
 
-        <div className="h-auto w-full flex justify-center items-center">
+        <div className="flex h-auto w-full items-center justify-center">
           <FramerWrapper y={0} scale={0.8}>
             <ContactForm translations={t.contact} />
           </FramerWrapper>
@@ -246,84 +246,30 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
   const programmingLanguages = [
-    {
-      name: "HTML5",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    },
-    {
-      name: "CSS3",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    },
-    {
-      name: "JavaScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    },
-    {
-      name: "TypeScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    },
-    {
-      name: "Python",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    },
-    {
-      name: "Java",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    },
+    { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
   ];
 
   const frameworks = [
-    {
-      name: "React",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    },
-    {
-      name: "Next.js",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    },
-    {
-      name: "Vue.js",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-    },
-    {
-      name: "Tailwind CSS",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    },
-    {
-      name: "Bootstrap",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    },
-    {
-      name: "Material UI",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
-    },
+    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+    { name: "Material UI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" },
   ];
 
   const tools = [
-    {
-      name: "Git",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    },
-    {
-      name: "GitHub",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-    },
-    {
-      name: "VS Code",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-    },
-    {
-      name: "Docker",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    },
-    {
-      name: "MongoDB",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    },
-    {
-      name: "PostgreSQL",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    },
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
   ];
 
   return (
@@ -344,7 +290,7 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
         {t.skills.badge}
       </Badge>
 
-      <div className="flex flex-col gap-3 relative z-10">
+      <div className="relative z-10 flex flex-col gap-3">
         <Heading>{t.skills.heading}</Heading>
 
         <FramerWrapper y={0} x={200}>
@@ -360,18 +306,8 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
 
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             {programmingLanguages.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-lg border border-border p-3 text-center"
-              >
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={40}
-                  height={40}
-                  unoptimized
-                  className="mx-auto h-10 w-10"
-                />
+              <div key={item.name} className="rounded-lg border border-border p-3 text-center">
+                <Image src={item.icon} alt={item.name} width={40} height={40} unoptimized className="mx-auto h-10 w-10" />
                 <p className="mt-2 text-sm font-medium">{item.name}</p>
               </div>
             ))}
@@ -385,18 +321,8 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
 
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             {frameworks.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-lg border border-border p-3 text-center"
-              >
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={40}
-                  height={40}
-                  unoptimized
-                  className="mx-auto h-10 w-10"
-                />
+              <div key={item.name} className="rounded-lg border border-border p-3 text-center">
+                <Image src={item.icon} alt={item.name} width={40} height={40} unoptimized className="mx-auto h-10 w-10" />
                 <p className="mt-2 text-sm font-medium">{item.name}</p>
               </div>
             ))}
@@ -410,18 +336,8 @@ export function LocalizedSkillsPage({ locale }: { locale: Locale }) {
 
           <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
             {tools.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-lg border border-border p-3 text-center"
-              >
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={40}
-                  height={40}
-                  unoptimized
-                  className="mx-auto h-10 w-10"
-                />
+              <div key={item.name} className="rounded-lg border border-border p-3 text-center">
+                <Image src={item.icon} alt={item.name} width={40} height={40} unoptimized className="mx-auto h-10 w-10" />
                 <p className="mt-2 text-sm font-medium">{item.name}</p>
               </div>
             ))}
@@ -485,6 +401,7 @@ export function LocalizedEducationPage({ locale }: { locale: Locale }) {
           </FramerWrapper>
         </div>
       </div>
+
       <CertificatesSection locale={locale} />
     </div>
   );
@@ -498,15 +415,7 @@ export function LocalizedProjectsPage({ locale }: { locale: Locale }) {
       title: "AI Whiteboard",
       description:
         "An interactive whiteboard application with freehand drawing, sticky notes, colour customization, object selection, undo and redo, local storage persistence, and PNG export. Built with React, TypeScript, Vite, and Node.js.",
-      tags: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Node.js",
-        "Vitest",
-        "CSS",
-        "REST API",
-      ],
+      tags: ["React", "TypeScript", "Vite", "Node.js", "Vitest", "CSS", "REST API"],
       link: "https://ai-whiteboard-pied.vercel.app/",
       github: "https://github.com/mokone-september/ai-whiteboard",
     },
@@ -530,31 +439,34 @@ export function LocalizedProjectsPage({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
+    <div className="relative flex h-full w-full flex-col items-start gap-5">
       <Badge variant="secondary" className="gap-1.5 py-1">
         <Layers className="h-4 w-4" />
         {t.projects.badge}
       </Badge>
 
-      <div className="flex flex-col gap-3">
+      <section className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-3 text-center">
         <Heading>{t.projects.heading}</Heading>
 
         <FramerWrapper y={0} x={200}>
-          <p className="font-poppins text-lg w-full text-primary max-sm:text-base">
+          <p className="w-full font-poppins text-lg text-primary max-sm:text-base">
             {t.projects.summary}
           </p>
         </FramerWrapper>
-      </div>
+      </section>
 
-      <div className="w-full flex flex-row flex-wrap gap-3 max-lg:flex-col">
-        {projects.map((val, index) => (
-          <ProjectCards key={index} value={val} num={index} />
+      <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <ProjectCards
+            key={project.title}
+            value={project}
+            num={index}
+          />
         ))}
       </div>
     </div>
   );
 }
-
 export function LocalizedMorePage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 

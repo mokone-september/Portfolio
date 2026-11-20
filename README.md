@@ -1,122 +1,169 @@
-# 🌐 Thabiso Mokone – Developer Portfolio
+# 🌐 Thabiso Mokone --- Developer Portfolio
 
 ![Portfolio Preview](public/og-image.png)
 
-Welcome — this repository contains my personal developer portfolio built with Next.js and Tailwind CSS. It's a working showcase of features I use daily (blog, MDX, animations, responsive UI, and theme persistence).
+Welcome to my personal developer portfolio! This project showcases my
+software development work, technical skills, experience, and writing.
 
----
+Built with **Next.js, TypeScript, and Tailwind CSS**, the portfolio
+features a responsive interface, interactive animations, an MDX-powered
+blog, and persistent theme preferences.
 
-## Badges
+## ✨ Features
 
-- Built with Next.js and Tailwind CSS
-- Node: `18` (see `.nvmrc`)
+-   **Responsive design** --- Mobile-first layouts that adapt to
+    different screen sizes.
+-   **Multi-language support** --- English and Afrikaans, with English
+    as the default language.
+-   **Dark and light themes** --- Theme preference persistence using
+    local storage.
+-   **MDX-powered blog** --- Technical articles and development-related
+    writing.
+-   **Animations** --- Interactive page transitions and component
+    animations.
+-   **Reusable components** --- Shared UI components and consistent
+    styling.
+-   **SEO support** --- Page metadata, Open Graph images, sitemap, and
+    robots.txt.
+-   **Project showcase** --- Selected projects with descriptions,
+    technology tags, and source/demo links.
 
----
+## 🛠️ Tech Stack
 
-## 🔧 Getting Started
+  Technology      Purpose
+  --------------- -----------------------------------------
+  Next.js 16      React framework and application routing
+  React           User interface
+  TypeScript      Static typing
+  Tailwind CSS    Styling and responsive layouts
+  Framer Motion   UI animations
+  MDX             Blog content
+  pnpm            Package management
 
-Prerequisites
+## 🚀 Getting Started
 
-- Node.js 18 (or match `.nvmrc`)
-- pnpm (preferred package manager)
+### Prerequisites
 
-Quick start
+-   Node.js 22 (see `.nvmrc`)
+-   pnpm (preferred package manager)
+-   Git
 
-```bash
-# clone
-git clone https://github.com/mokone-september/portfolio.git
-cd portfolio
+### Installation
 
-# install
-pnpm install
+Clone the repository:
 
-# development
-pnpm dev
-
-# build (production)
-pnpm build
-pnpm start
-
-# lint
-pnpm run lint
+``` bash
+git clone https://github.com/mokone-september/Portfolio.git
+cd Portfolio
 ```
 
-Open `http://localhost:3000` after running `pnpm dev`.
+Install the dependencies:
 
----
+``` bash
+pnpm install
+```
 
-## 🚀 Tech Stack
+Start the development server:
 
-- Framework: Next.js (App Router)
-- Language: TypeScript
-- Styling: Tailwind CSS
-- Animations: Framer Motion
-- MDX: `@mdx-js/mdx` for blog posts
+``` bash
+pnpm dev
+```
 
----
+Open <http://localhost:3000> in your browser.
 
-## ✨ Implemented Features
+## 📜 Available Scripts
 
-- Blog section (MDX-based posts) — `src/content/mdx`
-- Mobile-first responsive layout across the site
-- Framer Motion entry/hover animations and wrappers
-- Light/Dark theme with persistence (localStorage + before-hydrate script)
-- Reusable UI components (`src/components/ui`): button variants, badges, etc.
+  Command             Description
+  ------------------- --------------------------------------
+  `pnpm dev`          Start the development server
+  `pnpm type-check`   Run TypeScript checks
+  `pnpm lint`         Run ESLint
+  `pnpm build`        Create an optimized production build
+  `pnpm start`        Start the production server
 
----
+### Production Build
 
-## 📁 Folder Overview
+Run the checks and create a production build:
 
-- `app/` — Next.js App Router pages and layout
-- `src/components/` — UI and animation components
-- `src/content/` — MDX blog posts
-- `public/` — images and static assets
+``` bash
+pnpm type-check
+pnpm lint
+pnpm build
+```
 
----
+Start the production server:
 
-## 🛠 Scripts (package.json)
+``` bash
+pnpm start
+```
 
-- `pnpm dev` — start dev server
-- `pnpm build` — production build
-- `pnpm start` — run built app
-- `pnpm run lint` — run eslint
+## 🌍 Internationalization
 
----
+The portfolio supports two languages:
+
+-   English (`/`)
+-   Afrikaans (`/af`)
+
+English is the default language. Visitors can switch languages using the
+language selector.
+
+## 📁 Project Structure
+
+``` text
+Portfolio/
+├── public/                 # Static assets and images
+│   └── og-image.png        # Social sharing preview
+├── src/
+│   ├── app/                # Next.js App Router
+│   ├── components/         # Reusable UI and animation components
+│   ├── content/
+│   │   └── mdx/            # Blog posts
+│   └── lib/                # Utilities, translations and configuration
+├── .nvmrc                  # Node.js version
+├── package.json            # Project dependencies and scripts
+├── pnpm-lock.yaml          # Dependency lockfile
+└── README.md
+```
+
+## 📝 Blog
+
+The portfolio includes an MDX-based blog containing articles about
+software development, programming, and lessons learned while building
+projects.
+
+Blog content is maintained in:
+
+``` text
+src/content/mdx/
+```
 
 ## 🤝 Contributing
 
-If you'd like to contribute or run locally, please:
+Suggestions, feedback, and contributions are welcome.
 
-1. Fork the repo and create a branch
-2. Run `pnpm install` and `npx ultracite fix` to apply formatting
-3. Open a PR with a concise description of the change
+To contribute:
 
-Code style
+1.  Fork the repository.
+2.  Create a feature branch.
+3.  Install dependencies with `pnpm install`.
+4.  Make your changes.
+5.  Run the type-check, lint, and build commands.
+6.  Submit a pull request describing your changes.
 
-- Run `npx ultracite fix` to auto-fix formatting issues (Biome/Ultracite in this project)
-
----
-
-## 🖼 Preview
-
-The repository includes `public/og-image.png` which is used as a preview in this README.
-
----
-
-## 🗺️ Roadmap
-
-- Add blog section (done)
-- Mobile-first design (done)
-- Add animations with Framer Motion (done)
-- Add light/dark mode persistence (done)
-- Multi-language support (done)
-  - Spanish route support at `/es`
-
----
+Please keep contributions consistent with the existing project structure
+and coding conventions.
 
 ## 📬 Contact
 
-- Email: [mokoneseptember@gmail.com](mailto:mokoneseptember@gmail.com)
-- LinkedIn: [https://www.linkedin.com/in/mokone-september](https://www.linkedin.com/in/mokone-september)
+-   **Email:** <mokoneseptember@gmail.com>
+-   **GitHub:** [mokone-september](https://github.com/mokone-september)
+-   **LinkedIn:** [Thabiso Kenneth
+    Mokone](https://www.linkedin.com/in/mokone-september)
+-   **Medium:** [@mokoneseptember](https://medium.com/@mokoneseptember)
 
-Built with ❤️ — feel free to open an issue or PR with suggestions.
+------------------------------------------------------------------------
+
+Built with ❤️ by **Thabiso Kenneth Mokone**.
+
+Feel free to explore the repository, check out the projects, and connect
+with me!
