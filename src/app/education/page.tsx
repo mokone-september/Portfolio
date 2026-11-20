@@ -1,4 +1,5 @@
 import FramerWrapper from "@/components/animation/FramerWrapper";
+import CertificatesSection from "@/components/CertificatesSection";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -172,6 +173,7 @@ const EducationPage = () => {
           </article>
         </FramerWrapper>
       </div>
+      <CertificatesSection locale="en" />
     </div>
   );
 };

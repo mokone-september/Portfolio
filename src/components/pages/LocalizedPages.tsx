@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import CertificatesSection from "@/components/CertificatesSection";
 import Heading from "@/components/Heading";
 import { Badge } from "@/components/ui/badge";
 import FramerWrapper from "@/components/animation/FramerWrapper";
@@ -484,6 +485,7 @@ export function LocalizedEducationPage({ locale }: { locale: Locale }) {
           </FramerWrapper>
         </div>
       </div>
+      <CertificatesSection locale={locale} />
     </div>
   );
 }
