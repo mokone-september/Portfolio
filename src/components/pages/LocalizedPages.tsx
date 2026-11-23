@@ -12,14 +12,22 @@ import {
   ArrowUpRight,
   BookOpen,
   Briefcase,
+  CalendarDays,
+  Code,
+  Cpu,
+  Flag,
   Github,
   FolderKanban,
-  Heart,
-  Phone,
-  PackagePlus,
   GraduationCap,
+  Heart,
+  Languages,
   Layers,
   LightbulbIcon,
+  MapPin,
+  PackagePlus,
+  Phone,
+  User2,
+  Users,
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { buildLocalePath, getTranslations, Locale } from "@/lib/i18n";
@@ -115,40 +123,141 @@ export function LocalizedHomePage({ locale }: { locale: Locale }) {
 export function LocalizedAboutPage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
-  return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <Badge variant="secondary" className="gap-1.5 py-1">
-        <Heart className="h-4 w-4" />
-        {t.about.badge}
-      </Badge>
+  const serviceIcons = [Code, Layers, LightbulbIcon];
+  const detailIcons = [Languages, Flag, User2];
+  const hobbyIcons = [Code, PackagePlus, Cpu, Github];
 
-      <section className="flex flex-col gap-5">
+  return (
+    <div className="relative flex h-full w-full flex-col items-start gap-10 overflow-hidden pb-8">
+      {/* Introduction */}
+      <section className="flex w-full flex-col gap-5">
+        <Badge variant="secondary" className="w-fit gap-1.5 py-1">
+          <User2 className="h-4 w-4" />
+          {t.about.badge}
+        </Badge>
+
         <Heading>{t.about.heading}</Heading>
 
         <FramerWrapper y={0} x={100}>
-          <p className="font-poppins text-xl w-full text-primary max-sm:text-lg">
+          <p className="w-full font-poppins text-xl text-primary max-sm:text-lg">
             {t.about.body}
           </p>
         </FramerWrapper>
       </section>
 
-      <FramerWrapper className="block" y={100} delay={0.31}>
-        <h2 className="gap-2 text-3xl font-poppins text-primary font-semibold flex icon_underline relative max-sm:text-2xl">
-          <Heart className="h-8 w-8" /> {t.about.hobbies}
-        </h2>
+      {/* What I Do */}
+      <section className="w-full">
+        <FramerWrapper y={50} delay={0.1}>
+          <h2 className="relative mb-6 flex items-center gap-2 font-poppins text-3xl font-semibold text-primary icon_underline max-sm:text-2xl">
+            <Briefcase className="h-8 w-8" />
+            {t.about.whatIDo}
+          </h2>
+        </FramerWrapper>
 
-        <div className="w-full h-fit p-2 flex flex-row justify-between gap-7 max-lg:flex-col">
-          {t.about.hobbyList.map((hobby, index) => (
-            <div
-              key={index}
-              className="flex gap-2 justify-center items-center flex-row text-xl text-primary pt-3 max-lg:justify-start"
-            >
-              <span className="h-3 w-3 rounded-full bg-primary block mt-2" />
-              {hobby}
-            </div>
-          ))}
+        <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {t.about.services.map((service, index) => {
+            const Icon = serviceIcons[index];
+
+            return (
+              <FramerWrapper
+                key={service.title}
+                y={50}
+                delay={0.15 + index * 0.1}
+                className="h-full"
+              >
+                <div className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </div>
+
+                  <h3 className="font-poppins text-xl font-semibold text-primary">
+                    {service.title}
+                  </h3>
+
+                  <p className="font-poppins text-base leading-relaxed text-muted-foreground">
+                    {service.description}
+                  </p>
+                </div>
+              </FramerWrapper>
+            );
+          })}
         </div>
-      </FramerWrapper>
+      </section>
+
+      {/* Personal Details */}
+      <section className="w-full">
+        <FramerWrapper y={50} delay={0.2}>
+          <h2 className="relative mb-6 flex items-center gap-2 font-poppins text-3xl font-semibold text-primary icon_underline max-sm:text-2xl">
+            <User2 className="h-8 w-8" />
+            {t.about.personalDetails}
+          </h2>
+        </FramerWrapper>
+
+        <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {t.about.personalDetailsList.map((detail, index) => {
+            const Icon = detailIcons[index];
+
+            return (
+              <FramerWrapper
+                key={detail.title}
+                y={50}
+                delay={0.25 + index * 0.1}
+                className="h-full"
+              >
+                <div className="flex h-full items-center gap-4 rounded-xl border border-border bg-card p-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </div>
+
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <h3 className="font-poppins text-lg font-semibold text-primary">
+                      {detail.title}
+                    </h3>
+
+                    <p className="font-poppins text-sm text-muted-foreground">
+                      {detail.values.join(", ")}
+                    </p>
+                  </div>
+                </div>
+              </FramerWrapper>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Hobbies */}
+      <section className="w-full">
+        <FramerWrapper y={50} delay={0.3}>
+          <h2 className="relative mb-6 flex items-center gap-2 font-poppins text-3xl font-semibold text-primary icon_underline max-sm:text-2xl">
+            <Heart className="h-8 w-8" />
+            {t.about.hobbies}
+          </h2>
+        </FramerWrapper>
+
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+          {t.about.hobbyList.map((hobby, index) => {
+            const Icon = hobbyIcons[index];
+
+            return (
+              <FramerWrapper
+                key={hobby}
+                y={50}
+                delay={0.35 + index * 0.1}
+              >
+                <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <p className="font-poppins text-base text-primary">
+                    {hobby}
+                  </p>
+                </div>
+              </FramerWrapper>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
@@ -190,8 +299,10 @@ export function LocalizedContactPage({ locale }: { locale: Locale }) {
 export function LocalizedWorkPage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
+  const experienceIcons = [Code, Users, Briefcase];
+
   return (
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
+    <div className="relative flex h-full w-full flex-col items-start gap-6 overflow-hidden">
       <Badge variant="secondary" className="gap-1.5 py-1">
         <Briefcase className="h-4 w-4" />
         {t.work.badge}
@@ -201,41 +312,105 @@ export function LocalizedWorkPage({ locale }: { locale: Locale }) {
         <Heading>{t.work.heading}</Heading>
       </div>
 
-      <div className="w-full h-fit flex">
+      <div className="flex w-full flex-col gap-5">
+        {t.work.experiences.map((experience, index) => {
+          const ExperienceIcon = experienceIcons[index] ?? Briefcase;
+
+          return (
+            <FramerWrapper
+              key={`${experience.company}-${experience.title}`}
+              y={30}
+              x={0}
+              delay={0.15 + index * 0.1}
+              className="w-full"
+            >
+              <article className="group w-full rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <ExperienceIcon className="h-6 w-6" />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-3 flex flex-wrap items-center gap-2">
+                      <Badge variant="outline" className="gap-1.5">
+                        <CalendarDays className="h-3.5 w-3.5" />
+                        {experience.period}
+                      </Badge>
+                    </div>
+
+                    <h3 className="font-rubik text-xl font-semibold text-[#2f7df4] sm:text-2xl">
+                      {experience.company}
+                    </h3>
+
+                    <p className="mt-1 font-rubik text-base font-semibold text-foreground sm:text-lg">
+                      {experience.title}
+                    </p>
+
+                    <p className="mt-2 flex items-center gap-1.5 font-poppins text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4 shrink-0" />
+                      {experience.location}
+                    </p>
+
+                    <p className="mt-4 font-poppins text-sm leading-7 text-muted-foreground sm:text-base">
+                      {experience.description}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </FramerWrapper>
+          );
+        })}
+
+        {/* Professional Development */}
         <FramerWrapper
-          y={0}
-          x={-100}
-          delay={0.35}
-          className="w-1/4 font-rubik flex items-center justify-evenly text-lg max-sm:text-base"
+          y={30}
+          x={0}
+          delay={0.15 + t.work.experiences.length * 0.1}
+          className="w-full"
         >
-          February 2022 – February 2024
-        </FramerWrapper>
+          <article className="group w-full rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <BookOpen className="h-6 w-6" />
+              </div>
 
-        <FramerWrapper
-          y={0}
-          x={100}
-          delay={0.35}
-          className="relative w-3/4 border-l-4 border-l-[#3c3c3c] p-4 gap-3 education_point"
-        >
-          <div className="flex flex-col">
-            <h3 className="text-2xl font-rubik text-[#2f7df4] max-sm:text-xl font-semibold">
-              {t.work.company}
-            </h3>
+              <div className="min-w-0 flex-1">
+                <div className="mb-3 flex flex-wrap items-center gap-2">
+                  <Badge variant="outline" className="gap-1.5">
+                    <CalendarDays className="h-3.5 w-3.5" />
+                    {locale === "af" ? "2025 – Huidig" : "2025 – Present"}
+                  </Badge>
 
-            <p className="text-lg font-rubik text-[#4f5052] max-sm:text-base">
-              {t.work.title}
-            </p>
+                  <Badge variant="secondary">
+                    {t.work.ongoingDevelopment}
+                  </Badge>
+                </div>
 
-            <p className="text-base font-rubik text-[#6f7073] max-sm:text-sm">
-              {t.work.location}
-            </p>
+                <h3 className="font-rubik text-xl font-semibold text-[#2f7df4] sm:text-2xl">
+                  {t.work.professionalDevelopment}
+                </h3>
 
-            <br />
-          </div>
+                <p className="mt-1 font-rubik text-base font-semibold text-foreground sm:text-lg">
+                  {t.work.independentLearning}
+                </p>
 
-          <p className="font-poppins text-base w-full text-primary max-sm:text-xs">
-            {t.work.description}
-          </p>
+                <p className="mt-2 font-poppins text-sm text-muted-foreground">
+                  {t.work.learningDescription}
+                </p>
+
+                <p className="mt-4 font-poppins text-sm leading-7 text-muted-foreground sm:text-base">
+                  {t.work.developmentDescription}
+                </p>
+
+                <div className="mt-5 flex items-start gap-2 rounded-xl bg-primary/5 p-4">
+                  <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <p className="font-poppins text-sm text-muted-foreground">
+                    {t.work.developmentHighlights}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
         </FramerWrapper>
       </div>
     </div>
@@ -467,12 +642,13 @@ export function LocalizedProjectsPage({ locale }: { locale: Locale }) {
     </div>
   );
 }
+
 export function LocalizedMorePage({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
 
   return (
     <main className="relative flex min-h-full w-full flex-col gap-8 overflow-hidden">
-      <div className="relative z-10 flex flex-col items-start gap-4">
+      <div className="relative z-10 flex w-full flex-col items-center gap-4 text-center">
         <Badge variant="secondary" className="gap-1.5 py-1">
           <PackagePlus className="h-4 w-4" />
           {t.more.badge}
@@ -480,28 +656,34 @@ export function LocalizedMorePage({ locale }: { locale: Locale }) {
 
         <Heading>{t.more.heading}</Heading>
 
-        <p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
+        <p className="mx-auto w-full max-w-2xl text-center text-base leading-7 text-muted-foreground md:text-lg">
           {t.more.description}
         </p>
       </div>
 
-      <FramerWrapper y={20} scale={1} delay={0.1} duration={0.3}>
-        <section className="relative w-full overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm md:p-10">
-          <div className="mb-8 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+      <FramerWrapper
+        y={20}
+        scale={1}
+        delay={0.1}
+        duration={0.3}
+        className="w-full"
+      >
+        <section className="relative flex w-full flex-col items-center overflow-hidden rounded-3xl border border-border bg-card p-7 text-center shadow-sm md:p-10">
+          <div className="mb-8 flex items-center justify-center gap-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             <BookOpen className="h-4 w-4" />
             {t.more.featuredWriting}
           </div>
 
-          <div className="max-w-2xl">
-            <p className="mb-3 text-sm font-medium text-muted-foreground">
+          <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+            <p className="mb-3 text-center text-sm font-medium text-muted-foreground">
               {t.more.writingCategory}
             </p>
 
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+            <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
               {t.more.writingTitle}
             </h2>
 
-            <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
+            <p className="mt-4 max-w-xl text-center leading-7 text-muted-foreground">
               {t.more.writingDescription}
             </p>
 
@@ -509,7 +691,7 @@ export function LocalizedMorePage({ locale }: { locale: Locale }) {
               href="https://medium.com/@mokoneseptember"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
             >
               {t.more.button}
               <ArrowUpRight className="h-4 w-4" />
@@ -578,6 +760,14 @@ export function LocalizedBlogPage({
 
   return (
     <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
+      <Badge
+        variant="outline"
+        className="gap-1.5 border-gray-500 bg-transparent py-1"
+      >
+        <BookOpen className="h-4 w-4" />
+        {t.blog.badge}
+      </Badge>
+
       <div className="flex flex-col gap-3">
         <Heading>{t.blog.title}</Heading>
 

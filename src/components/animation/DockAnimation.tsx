@@ -15,6 +15,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -76,7 +77,11 @@ function DockProvider({
 
 function useDock() {
   const ctx = useContext(DockContext);
-  if (!ctx) throw new Error('useDock must be used within a DockProvider');
+
+  if (!ctx) {
+    throw new Error('useDock must be used within a DockProvider');
+  }
+
   return ctx;
 }
 
@@ -92,21 +97,37 @@ export function Dock({
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const container = scrollContainerRef.current;
+
+    if (container) {
+      container.scrollLeft = 0;
+    }
+  }, []);
+
   const maxHeight = useMemo(
     () => Math.max(DOCK_HEIGHT, magnification + magnification / 2 + 4),
     [magnification],
   );
 
-  const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
+  const heightRow = useTransform(
+    isHovered,
+    [0, 1],
+    [panelHeight, maxHeight],
+  );
+
   const height = useSpring(heightRow, spring);
 
   return (
     <motion.div
+      ref={scrollContainerRef}
       style={{
         height,
         scrollbarWidth: 'none',
       }}
-      className="mx-0 sm:mx-2 flex max-w-full items-end overflow-x-auto"
+      className="mx-0 flex w-full min-w-0 flex-1 items-end overflow-x-auto sm:mx-2 sm:w-auto sm:flex-none"
     >
       <motion.div
         onMouseMove={(e) => {
@@ -118,7 +139,7 @@ export function Dock({
           mouseX.set(Infinity);
         }}
         className={cn(
-          'mx-auto flex w-fit gap-1.5 sm:gap-4 rounded-2xl bg-gray-50 px-4 dark:bg-neutral-900',
+          'mx-0 flex w-max min-w-full gap-1.5 rounded-2xl bg-gray-50 px-2 dark:bg-neutral-900 sm:mx-auto sm:w-fit sm:min-w-0 sm:gap-4 sm:px-4',
           className,
         )}
         style={{ height: panelHeight }}
@@ -141,13 +162,16 @@ export function Dock({
 /* DOCK ITEM */
 export function DockItem({ children, className }: DockItemProps) {
   const ref = useRef<HTMLDivElement>(null);
+
   const { distance, magnification, mouseX, spring } = useDock();
 
   const isHovered = useMotionValue(0);
 
   const mouseDistance = useTransform(mouseX, (val) => {
     const rect = ref.current?.getBoundingClientRect();
+
     if (!rect) return 0;
+
     return val - (rect.x + rect.width / 2);
   });
 
@@ -168,12 +192,15 @@ export function DockItem({ children, className }: DockItemProps) {
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       className={cn(
-        'relative inline-flex items-center justify-center',
+        'relative inline-flex shrink-0 items-center justify-center',
         className,
       )}
     >
       {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { width, isHovered } as any),
+        cloneElement(
+          child as React.ReactElement,
+          { width, isHovered } as any,
+        ),
       )}
     </motion.div>
   );
@@ -191,7 +218,10 @@ export function DockLabel({
   useEffect(() => {
     if (!isHovered) return;
 
-    const unsub = isHovered.on('change', (v) => setVisible(v === 1));
+    const unsub = isHovered.on('change', (v) => {
+      setVisible(v === 1);
+    });
+
     return () => unsub();
   }, [isHovered]);
 
@@ -220,7 +250,11 @@ export function DockLabel({
 /* ICON */
 export function DockIcon({ children, className, width }: DockIconProps) {
   const fallbackWidth = useMotionValue(40);
-  const widthHalf = useTransform(width ?? fallbackWidth, (val) => val / 2);
+
+  const widthHalf = useTransform(
+    width ?? fallbackWidth,
+    (val) => val / 2,
+  );
 
   return (
     <motion.div

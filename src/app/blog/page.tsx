@@ -35,10 +35,10 @@ export default function BlogPage() {
     <main className="mx-auto flex w-full max-w-6xl flex-col gap-12 pb-12">
       {/* Introduction */}
       <section className="space-y-6">
-        <div className="flex items-center gap-2 text-sm font-medium text-primary">
+        <Badge variant="secondary" className="w-fit gap-1.5 py-1">
           <BookOpen className="h-4 w-4" />
-          <span>THE DEVELOPER JOURNAL</span>
-        </div>
+          Developer Journal
+        </Badge>
 
         <div className="max-w-3xl space-y-5">
           <h1 className="font-poppins text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">

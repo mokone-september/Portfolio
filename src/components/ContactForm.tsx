@@ -26,10 +26,10 @@ type ContactFormTranslations = {
   emailPlaceholder: string;
   messagePlaceholder: string;
   submit: string;
-  thankYouTitle?: string;
-  thankYouDescription?: string;
-  submitError?: string;
-  sending?: string;
+  thankYouTitle: string;
+  thankYouDescription: string;
+  submitError: string;
+  sending: string;
 };
 
 const defaultTranslations: ContactFormTranslations = {
@@ -73,13 +73,11 @@ const ContactForm = ({
           </div>
 
           <h2 className="text-2xl font-bold tracking-tight">
-            {translations.thankYouTitle ??
-              "Thank you for getting in touch!"}
+            {translations.thankYouTitle}
           </h2>
 
           <p className="mt-3 max-w-sm leading-relaxed text-muted-foreground">
-            {translations.thankYouDescription ??
-              "Your message has been sent successfully. I appreciate you reaching out and will get back to you as soon as possible."}
+            {translations.thankYouDescription}
           </p>
         </CardContent>
       </Card>
@@ -93,6 +91,7 @@ const ContactForm = ({
           <CardTitle className="icon_underline">
             {translations.formTitle}
           </CardTitle>
+
           <CardDescription>
             {translations.formDescription}
           </CardDescription>
@@ -101,6 +100,7 @@ const ContactForm = ({
         <CardContent className="space-y-4">
           <div className="grid gap-1.5">
             <Label htmlFor="name">{translations.name}</Label>
+
             <Input
               id="name"
               type="text"
@@ -113,6 +113,7 @@ const ContactForm = ({
 
           <div className="grid gap-1.5">
             <Label htmlFor="email">{translations.email}</Label>
+
             <Input
               id="email"
               type="email"
@@ -125,6 +126,7 @@ const ContactForm = ({
 
           <div className="grid gap-1.5">
             <Label htmlFor="message">{translations.message}</Label>
+
             <textarea
               id="message"
               name="message"
@@ -141,10 +143,8 @@ const ContactForm = ({
               className="flex items-start gap-2 rounded-md border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive"
             >
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-              <p>
-                {translations.submitError ??
-                  "Something went wrong while sending your message. Please try again."}
-              </p>
+
+              <p>{translations.submitError}</p>
             </div>
           )}
         </CardContent>
@@ -155,9 +155,7 @@ const ContactForm = ({
             className="w-full"
             disabled={isPending}
           >
-            {isPending
-              ? translations.sending ?? "Sending..."
-              : translations.submit}
+            {isPending ? translations.sending : translations.submit}
           </Button>
         </CardFooter>
       </form>
